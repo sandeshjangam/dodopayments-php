@@ -1,4 +1,4 @@
-# dodopayments PHP SDK 1.10.1
+# dodopayments PHP SDK 1.16.1
 
 
 Welcome to the dodopayments SDK documentation. This guide will help you get started with integrating and using the dodopayments SDK in your project.
@@ -7,8 +7,8 @@ Welcome to the dodopayments SDK documentation. This guide will help you get star
 
 ## Versions
 
-- API version: `1.10.1`
-- SDK version: `1.10.1`
+- API version: `1.16.1`
+- SDK version: `1.16.1`
 
 ## Table of Contents
 - [Setup & Configuration](#setup--configuration)
@@ -155,6 +155,7 @@ The SDK includes several models that represent the data structures used in API r
 | [CreateCustomerRequest](documentation/models/CreateCustomerRequest.md) |  |
 | [CustomerResponse](documentation/models/CustomerResponse.md) |  |
 | [PatchCustomerRequest](documentation/models/PatchCustomerRequest.md) |  |
+| [CreateCustomerPortalSessionResponse](documentation/models/CreateCustomerPortalSessionResponse.md) |  |
 | [GetDiscountsListResponse](documentation/models/GetDiscountsListResponse.md) |  |
 | [CreateDiscountRequest](documentation/models/CreateDiscountRequest.md) | Request body for creating a discount. `code` is optional; if not provided, we generate a random 16-char code. |
 | [DiscountResponse](documentation/models/DiscountResponse.md) |  |
@@ -216,25 +217,25 @@ The SDK includes several models that represent the data structures used in API r
 | [PayoutStatus](documentation/models/PayoutStatus.md) |  |
 | [GetProductsListResponseItem](documentation/models/GetProductsListResponseItem.md) |  |
 | [Price](documentation/models/Price.md) |  |
-| [Price_1](documentation/models/Price1.md) |  |
-| [Price_2](documentation/models/Price2.md) |  |
-| [Price_1Type](documentation/models/Price1Type.md) |  |
+| [OneTimePrice](documentation/models/OneTimePrice.md) |  |
+| [RecurringPrice](documentation/models/RecurringPrice.md) |  |
+| [OneTimePriceType](documentation/models/OneTimePriceType.md) |  |
 | [TimeInterval](documentation/models/TimeInterval.md) |  |
-| [Price_2Type](documentation/models/Price2Type.md) |  |
+| [RecurringPriceType](documentation/models/RecurringPriceType.md) |  |
 | [LicenseKeyDuration](documentation/models/LicenseKeyDuration.md) |  |
 | [OnDemandSubscriptionReq](documentation/models/OnDemandSubscriptionReq.md) |  |
 | [OutgoingWebhookData](documentation/models/OutgoingWebhookData.md) |  |
 | [EventType](documentation/models/EventType.md) | Event types for Dodo events |
-| [OutgoingWebhookData_1](documentation/models/OutgoingWebhookData1.md) |  |
-| [OutgoingWebhookData_2](documentation/models/OutgoingWebhookData2.md) |  |
-| [OutgoingWebhookData_3](documentation/models/OutgoingWebhookData3.md) |  |
-| [OutgoingWebhookData_4](documentation/models/OutgoingWebhookData4.md) |  |
-| [OutgoingWebhookData_5](documentation/models/OutgoingWebhookData5.md) |  |
-| [OutgoingWebhookData_1PayloadType](documentation/models/OutgoingWebhookData1PayloadType.md) |  |
-| [OutgoingWebhookData_2PayloadType](documentation/models/OutgoingWebhookData2PayloadType.md) |  |
-| [OutgoingWebhookData_3PayloadType](documentation/models/OutgoingWebhookData3PayloadType.md) |  |
-| [OutgoingWebhookData_4PayloadType](documentation/models/OutgoingWebhookData4PayloadType.md) |  |
-| [OutgoingWebhookData_5PayloadType](documentation/models/OutgoingWebhookData5PayloadType.md) |  |
+| [Payment](documentation/models/Payment.md) |  |
+| [Subscription](documentation/models/Subscription.md) |  |
+| [Refund](documentation/models/Refund.md) |  |
+| [Dispute](documentation/models/Dispute.md) |  |
+| [LicenseKey](documentation/models/LicenseKey.md) |  |
+| [PaymentPayloadType](documentation/models/PaymentPayloadType.md) |  |
+| [SubscriptionPayloadType](documentation/models/SubscriptionPayloadType.md) |  |
+| [RefundPayloadType](documentation/models/RefundPayloadType.md) |  |
+| [DisputePayloadType](documentation/models/DisputePayloadType.md) |  |
+| [LicenseKeyPayloadType](documentation/models/LicenseKeyPayloadType.md) |  |
 </details>
 
 ## License

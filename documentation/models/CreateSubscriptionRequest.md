@@ -11,11 +11,13 @@ Request payload for creating a new subscription This struct represents the data 
     | productId | string | ✅ | Unique identifier of the product to subscribe to |
     | quantity | integer | ✅ | Number of units to subscribe for. Must be at least 1. |
     | allowedPaymentMethodTypes | array | ❌ | List of payment methods allowed during checkout. Customers will **never** see payment methods that are **not** in this list. However, adding a method here **does not guarantee** customers will see it. Availability still depends on other factors (e.g., customer location, merchant settings). |
+    | billingCurrency | model | ❌ |  |
     | discountCode | string | ❌ | Discount Code to apply to the subscription |
     | metadata | dictionary | ❌ |  |
     | onDemand | model | ❌ |  |
     | paymentLink | boolean | ❌ | If true, generates a payment link. Defaults to false if not specified. |
     | returnUrl | string | ❌ | Optional URL to redirect after successful subscription creation |
+    | showSavedPaymentMethods | boolean | ❌ | Display saved payment methods of a returning customer False by default |
     | taxId | string | ❌ | Tax ID in case the payment is B2B. If tax id validation fails the payment creation will fail |
     | trialPeriodDays | integer | ❌ | Optional trial period in days If specified, this value overrides the trial period set in the product's price Must be between 0 and 10000 days |
 

@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class Price2
+class RecurringPrice
 {
     #[SerializedName('currency')]
     public Currency $currency;
@@ -64,7 +64,7 @@ For example, a value of `12` with a `subscription_period_interval` of `month` re
     public ?int $trialPeriodDays;
 
     #[SerializedName('type')]
-    public Price2Type $type;
+    public RecurringPriceType $type;
 
     public function __construct(
         Currency $currency,
@@ -77,7 +77,7 @@ For example, a value of `12` with a `subscription_period_interval` of `month` re
         TimeInterval $subscriptionPeriodInterval,
         ?bool $taxInclusive = null,
         ?int $trialPeriodDays = null,
-        Price2Type $type
+        RecurringPriceType $type
     ) {
         $this->currency = $currency;
         $this->discount = $discount;

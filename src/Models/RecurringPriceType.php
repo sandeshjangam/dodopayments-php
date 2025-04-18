@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-enum Price2Type: string
+enum RecurringPriceType: string
 {
     case RecurringPrice = 'recurring_price';
 }

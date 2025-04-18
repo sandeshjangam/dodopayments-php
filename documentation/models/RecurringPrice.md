@@ -1,4 +1,4 @@
-# Price_2
+# RecurringPrice
 
 
 
@@ -18,7 +18,7 @@
     | taxInclusive | boolean | ❌ | Indicates if the price is tax inclusive |
     | trialPeriodDays | integer | ❌ | Number of days for the trial period. A value of `0` indicates no trial period. |
 
-# Price_2Type
+# RecurringPriceType
 
 
 

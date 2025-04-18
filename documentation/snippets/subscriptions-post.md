@@ -4,6 +4,7 @@
 use Dodopayments\Client;
 use Dodopayments\Models\PaymentMethodTypes;
 use Dodopayments\Models\BillingAddress;
+use Dodopayments\Models\Currency;
 use Dodopayments\Models\CustomerRequest;
 use Dodopayments\Models\OnDemandSubscriptionReq;
 use Dodopayments\Models\CreateSubscriptionRequest;
@@ -25,6 +26,7 @@ COMPLEX_MODEL_NOT_IMPLEMENTED
 $input = new Models\CreateSubscriptionRequest(
   allowedPaymentMethodTypes: [],
   billing: $billingAddress,
+  billingCurrency: $currency,
   customer: $customerRequest,
   discountCode: "discount_code",
   metadata: [],
@@ -33,8 +35,9 @@ $input = new Models\CreateSubscriptionRequest(
   productId: "product_id",
   quantity: 8,
   returnUrl: "return_url",
+  showSavedPaymentMethods: true,
   taxId: "tax_id",
-  trialPeriodDays: 10
+  trialPeriodDays: 8
 );
 
 $response = $sdk->subscriptions->createSubscriptionHandler(

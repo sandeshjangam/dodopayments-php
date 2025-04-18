@@ -7,7 +7,7 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | mandateOnly | boolean | ✅ | If set as True, does not perform any charge and only authorizes payment method details for future use. |
-    | productPrice | integer | ❌ | Product price for the initial charge to customer If not specified the stored price of the product will be used |
+    | productPrice | integer | ❌ | Product price for the initial charge to customer If not specified the stored price of the product will be used Represented in the lowest denomination of the currency (e.g., cents for USD). For example, to charge $1.00, pass `100`. |
 
 
 

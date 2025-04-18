@@ -1,4 +1,4 @@
-# OutgoingWebhookData_2PayloadType
+# RefundPayloadType
 
 
 
@@ -6,7 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
-    | Subscription | string |  | Subscription |
+    | Refund | string |  | Refund |
 
 
 

@@ -22,6 +22,9 @@ Availability still depends on other factors (e.g., customer location, merchant s
     #[SerializedName('billing')]
     public BillingAddress $billing;
 
+    #[SerializedName('billing_currency')]
+    public ?Currency $billingCurrency;
+
     #[SerializedName('customer')]
     public CustomerRequest $customer;
 
@@ -55,6 +58,13 @@ Must be a valid URL if provided.
     public ?string $returnUrl;
 
     /**
+	 * Display saved payment methods of a returning customer
+False by default
+	 */
+    #[SerializedName('show_saved_payment_methods')]
+    public ?bool $showSavedPaymentMethods;
+
+    /**
      * Tax ID in case the payment is B2B. If tax id validation fails the payment creation will fail
      */
     #[SerializedName('tax_id')]
@@ -63,22 +73,26 @@ Must be a valid URL if provided.
     public function __construct(
         ?array $allowedPaymentMethodTypes = [],
         BillingAddress $billing,
+        ?Currency $billingCurrency = null,
         CustomerRequest $customer,
         ?string $discountCode = null,
         ?array $metadata = [],
         ?bool $paymentLink = null,
         array $productCart,
         ?string $returnUrl = null,
+        ?bool $showSavedPaymentMethods = null,
         ?string $taxId = null
     ) {
         $this->allowedPaymentMethodTypes = $allowedPaymentMethodTypes;
         $this->billing = $billing;
+        $this->billingCurrency = $billingCurrency;
         $this->customer = $customer;
         $this->discountCode = $discountCode;
         $this->metadata = $metadata;
         $this->paymentLink = $paymentLink;
         $this->productCart = $productCart;
         $this->returnUrl = $returnUrl;
+        $this->showSavedPaymentMethods = $showSavedPaymentMethods;
         $this->taxId = $taxId;
     }
 }

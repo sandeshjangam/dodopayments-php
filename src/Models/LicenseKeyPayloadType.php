@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-enum Price1Type: string
+enum LicenseKeyPayloadType: string
 {
-    case OneTimePrice = 'one_time_price';
+    case LicenseKey = 'LicenseKey';
 }

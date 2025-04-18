@@ -1,4 +1,4 @@
-# Price_1
+# OneTimePrice
 
 
 
@@ -15,7 +15,7 @@
     | suggestedPrice | integer | ❌ | A suggested price for the user to pay. This value is only considered if [`pay_what_you_want`](Self::pay_what_you_want) is `true`. Otherwise, it is ignored. |
     | taxInclusive | boolean | ❌ | Indicates if the price is tax inclusive. |
 
-# Price_1Type
+# OneTimePriceType
 
 
 

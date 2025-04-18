@@ -23,6 +23,7 @@
     | Sepa | string |  | sepa |
     | Ach | string |  | ach |
     | AmazonPay | string |  | amazon_pay |
+    | AfterpayClearpay | string |  | afterpay_clearpay |
 
 
 

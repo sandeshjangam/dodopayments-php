@@ -168,7 +168,7 @@ print_r($response);
 
 **Return Type**
 
-`mixed`
+`Models\CreateCustomerPortalSessionResponse`
 
 **Example Usage Code Snippet**
 ```php

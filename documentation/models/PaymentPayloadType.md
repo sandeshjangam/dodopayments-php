@@ -1,4 +1,4 @@
-# Price_2Type
+# PaymentPayloadType
 
 
 
@@ -6,7 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
-    | RecurringPrice | string |  | recurring_price |
+    | Payment | string |  | Payment |
 
 
 

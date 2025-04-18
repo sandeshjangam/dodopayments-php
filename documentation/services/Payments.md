@@ -76,6 +76,7 @@ print_r($response);
 use Dodopayments\Client;
 use Dodopayments\Models\PaymentMethodTypes;
 use Dodopayments\Models\BillingAddress;
+use Dodopayments\Models\Currency;
 use Dodopayments\Models\CustomerRequest;
 use Dodopayments\Models\OneTimeProductCartItemReq;
 use Dodopayments\Models\CreateOneTimePaymentRequest;
@@ -104,12 +105,14 @@ $oneTimeProductCartItemReq = new Models\OneTimeProductCartItemReq(
 $input = new Models\CreateOneTimePaymentRequest(
   allowedPaymentMethodTypes: [],
   billing: $billingAddress,
+  billingCurrency: $currency,
   customer: $customerRequest,
   discountCode: "discount_code",
   metadata: [],
   paymentLink: true,
   productCart: [],
   returnUrl: "return_url",
+  showSavedPaymentMethods: true,
   taxId: "tax_id"
 );
 

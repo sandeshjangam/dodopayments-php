@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class OutgoingWebhookData4
+class Dispute
 {
     /**
      * The amount involved in the dispute, represented as a string to accommodate precision.
@@ -51,7 +51,7 @@ class OutgoingWebhookData4
     public string $paymentId;
 
     #[SerializedName('payload_type')]
-    public OutgoingWebhookData4PayloadType $payloadType;
+    public DisputePayloadType $payloadType;
 
     public function __construct(
         string $amount,
@@ -62,7 +62,7 @@ class OutgoingWebhookData4
         DisputeStage $disputeStage,
         DisputeStatus $disputeStatus,
         string $paymentId,
-        OutgoingWebhookData4PayloadType $payloadType
+        DisputePayloadType $payloadType
     ) {
         $this->amount = $amount;
         $this->businessId = $businessId;

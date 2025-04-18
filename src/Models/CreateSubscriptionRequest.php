@@ -28,6 +28,9 @@ Availability still depends on other factors (e.g., customer location, merchant s
     #[SerializedName('billing')]
     public BillingAddress $billing;
 
+    #[SerializedName('billing_currency')]
+    public ?Currency $billingCurrency;
+
     #[SerializedName('customer')]
     public CustomerRequest $customer;
 
@@ -69,6 +72,13 @@ Defaults to false if not specified.
     public ?string $returnUrl;
 
     /**
+	 * Display saved payment methods of a returning customer
+False by default
+	 */
+    #[SerializedName('show_saved_payment_methods')]
+    public ?bool $showSavedPaymentMethods;
+
+    /**
      * Tax ID in case the payment is B2B. If tax id validation fails the payment creation will fail
      */
     #[SerializedName('tax_id')]
@@ -85,6 +95,7 @@ Must be between 0 and 10000 days
     public function __construct(
         ?array $allowedPaymentMethodTypes = [],
         BillingAddress $billing,
+        ?Currency $billingCurrency = null,
         CustomerRequest $customer,
         ?string $discountCode = null,
         ?array $metadata = [],
@@ -93,11 +104,13 @@ Must be between 0 and 10000 days
         string $productId,
         int $quantity,
         ?string $returnUrl = null,
+        ?bool $showSavedPaymentMethods = null,
         ?string $taxId = null,
         ?int $trialPeriodDays = null
     ) {
         $this->allowedPaymentMethodTypes = $allowedPaymentMethodTypes;
         $this->billing = $billing;
+        $this->billingCurrency = $billingCurrency;
         $this->customer = $customer;
         $this->discountCode = $discountCode;
         $this->metadata = $metadata;
@@ -106,6 +119,7 @@ Must be between 0 and 10000 days
         $this->productId = $productId;
         $this->quantity = $quantity;
         $this->returnUrl = $returnUrl;
+        $this->showSavedPaymentMethods = $showSavedPaymentMethods;
         $this->taxId = $taxId;
         $this->trialPeriodDays = $trialPeriodDays;
     }

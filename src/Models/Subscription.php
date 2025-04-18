@@ -6,8 +6,11 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class OutgoingWebhookData2
+class Subscription
 {
+    #[SerializedName('billing')]
+    public BillingAddress $billing;
+
     /**
      * Cancelled timestamp if the subscription is cancelled
      */
@@ -99,9 +102,10 @@ class OutgoingWebhookData2
     public int $trialPeriodDays;
 
     #[SerializedName('payload_type')]
-    public OutgoingWebhookData2PayloadType $payloadType;
+    public SubscriptionPayloadType $payloadType;
 
     public function __construct(
+        BillingAddress $billing,
         ?string $cancelledAt = null,
         string $createdAt,
         Currency $currency,
@@ -120,8 +124,9 @@ class OutgoingWebhookData2
         TimeInterval $subscriptionPeriodInterval,
         bool $taxInclusive,
         int $trialPeriodDays,
-        OutgoingWebhookData2PayloadType $payloadType
+        SubscriptionPayloadType $payloadType
     ) {
+        $this->billing = $billing;
         $this->cancelledAt = $cancelledAt;
         $this->createdAt = $createdAt;
         $this->currency = $currency;

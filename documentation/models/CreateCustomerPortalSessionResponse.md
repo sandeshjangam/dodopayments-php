@@ -1,4 +1,4 @@
-# OutgoingWebhookData_1PayloadType
+# CreateCustomerPortalSessionResponse
 
 
 
@@ -6,7 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
-    | Payment | string |  | Payment |
+    | link | string | ✅ |  |
 
 
 

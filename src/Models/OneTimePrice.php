@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class Price1
+class OneTimePrice
 {
     #[SerializedName('currency')]
     public Currency $currency;
@@ -55,7 +55,7 @@ Purchasing power parity feature is not available as of now.
     public ?bool $taxInclusive;
 
     #[SerializedName('type')]
-    public Price1Type $type;
+    public OneTimePriceType $type;
 
     public function __construct(
         Currency $currency,
@@ -65,7 +65,7 @@ Purchasing power parity feature is not available as of now.
         bool $purchasingPowerParity,
         ?int $suggestedPrice = null,
         ?bool $taxInclusive = null,
-        Price1Type $type
+        OneTimePriceType $type
     ) {
         $this->currency = $currency;
         $this->discount = $discount;

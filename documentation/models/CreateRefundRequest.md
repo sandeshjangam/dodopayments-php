@@ -7,7 +7,6 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | paymentId | string | ✅ | The unique identifier of the payment to be refunded. |
-    | amount | integer | ❌ | The amount to be refunded. Must be non-negative. Optional. Partial refunds are currently disabled. |
     | reason | string | ❌ | The reason for the refund, if any. Maximum length is 3000 characters. Optional. |
 
 

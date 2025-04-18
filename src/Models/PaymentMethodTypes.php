@@ -25,4 +25,5 @@ enum PaymentMethodTypes: string
     case Sepa = 'sepa';
     case Ach = 'ach';
     case AmazonPay = 'amazon_pay';
+    case AfterpayClearpay = 'afterpay_clearpay';
 }

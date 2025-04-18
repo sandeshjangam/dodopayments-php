@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class OutgoingWebhookData3
+class Refund
 {
     /**
      * The refunded amount.
@@ -51,7 +51,7 @@ class OutgoingWebhookData3
     public RefundStatus $status;
 
     #[SerializedName('payload_type')]
-    public OutgoingWebhookData3PayloadType $payloadType;
+    public RefundPayloadType $payloadType;
 
     public function __construct(
         ?int $amount = null,
@@ -62,7 +62,7 @@ class OutgoingWebhookData3
         ?string $reason = null,
         string $refundId,
         RefundStatus $status,
-        OutgoingWebhookData3PayloadType $payloadType
+        RefundPayloadType $payloadType
     ) {
         $this->amount = $amount;
         $this->businessId = $businessId;

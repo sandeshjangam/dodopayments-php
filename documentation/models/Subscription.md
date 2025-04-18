@@ -1,4 +1,4 @@
-# OutgoingWebhookData_2
+# Subscription
 
 
 
@@ -6,6 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
+    | billing | model | ✅ |  |
     | createdAt | string | ✅ | Timestamp when the subscription was created |
     | currency | model | ✅ |  |
     | customer | model | ✅ |  |
@@ -26,7 +27,7 @@
     | cancelledAt | string | ❌ | Cancelled timestamp if the subscription is cancelled |
     | discountId | string | ❌ | The discount id if discount is applied |
 
-# OutgoingWebhookData_2PayloadType
+# SubscriptionPayloadType
 
 
 

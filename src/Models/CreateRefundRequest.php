@@ -9,13 +9,6 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 class CreateRefundRequest
 {
     /**
-	 * The amount to be refunded. Must be non-negative. Optional.
-Partial refunds are currently disabled.
-	 */
-    #[SerializedName('amount')]
-    public ?int $amount;
-
-    /**
      * The unique identifier of the payment to be refunded.
      */
     #[SerializedName('payment_id')]
@@ -27,9 +20,8 @@ Partial refunds are currently disabled.
     #[SerializedName('reason')]
     public ?string $reason;
 
-    public function __construct(?int $amount = null, string $paymentId, ?string $reason = null)
+    public function __construct(string $paymentId, ?string $reason = null)
     {
-        $this->amount = $amount;
         $this->paymentId = $paymentId;
         $this->reason = $reason;
     }

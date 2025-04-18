@@ -42,14 +42,16 @@ class Customers extends BaseService
         return Serializer::deserialize($data, Models\CustomerResponse::class);
     }
 
-    public function createCustomerPortalSession(string $customerId, bool $sendEmail = null): mixed
-    {
+    public function createCustomerPortalSession(
+        string $customerId,
+        bool $sendEmail = null
+    ): Models\CreateCustomerPortalSessionResponse {
         $data = $this->sendRequest('post', "/customers/{$customerId}/customer-portal/session", [
             'query' => [
                 'send_email' => $sendEmail,
             ],
         ]);
 
-        return json_decode($data, true);
+        return Serializer::deserialize($data, Models\CreateCustomerPortalSessionResponse::class);
     }
 }

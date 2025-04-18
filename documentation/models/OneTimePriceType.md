@@ -1,4 +1,4 @@
-# PatchSubscriptionRequest
+# OneTimePriceType
 
 
 
@@ -6,10 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
-    | billing | model | ❌ |  |
-    | metadata | dictionary | ❌ |  |
-    | status | model | ❌ |  |
-    | taxId | string | ❌ |  |
+    | OneTimePrice | string |  | one_time_price |
 
 
 

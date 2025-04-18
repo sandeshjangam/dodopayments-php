@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class OutgoingWebhookData1
+class Payment
 {
     /**
      * Identifier of the business associated with the payment
@@ -114,7 +114,7 @@ class OutgoingWebhookData1
     public ?string $updatedAt;
 
     #[SerializedName('payload_type')]
-    public OutgoingWebhookData1PayloadType $payloadType;
+    public PaymentPayloadType $payloadType;
 
     public function __construct(
         string $businessId,
@@ -136,7 +136,7 @@ class OutgoingWebhookData1
         ?int $tax = null,
         int $totalAmount,
         ?string $updatedAt = null,
-        OutgoingWebhookData1PayloadType $payloadType
+        PaymentPayloadType $payloadType
     ) {
         $this->businessId = $businessId;
         $this->createdAt = $createdAt;

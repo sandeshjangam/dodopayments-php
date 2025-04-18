@@ -11,6 +11,9 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
  */
 class SubscriptionResponse
 {
+    #[SerializedName('billing')]
+    public BillingAddress $billing;
+
     /**
      * Cancelled timestamp if the subscription is cancelled
      */
@@ -102,6 +105,7 @@ class SubscriptionResponse
     public int $trialPeriodDays;
 
     public function __construct(
+        BillingAddress $billing,
         ?string $cancelledAt = null,
         string $createdAt,
         Currency $currency,
@@ -121,6 +125,7 @@ class SubscriptionResponse
         bool $taxInclusive,
         int $trialPeriodDays
     ) {
+        $this->billing = $billing;
         $this->cancelledAt = $cancelledAt;
         $this->createdAt = $createdAt;
         $this->currency = $currency;

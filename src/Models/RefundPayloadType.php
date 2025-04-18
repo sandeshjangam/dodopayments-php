@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-enum OutgoingWebhookData2PayloadType: string
+enum RefundPayloadType: string
 {
-    case Subscription = 'Subscription';
+    case Refund = 'Refund';
 }

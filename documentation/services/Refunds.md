@@ -42,8 +42,8 @@ $status = Models\RefundStatus::Succeeded;
 $response = $sdk->refunds->listRefunds(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 8,
-  pageNumber: 1,
+  pageSize: 1,
+  pageNumber: 123,
   status: $status,
   customerId: "customer_id"
 );
@@ -78,7 +78,6 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\CreateRefundRequest(
-  amount: 123,
   paymentId: "payment_id",
   reason: "reason"
 );

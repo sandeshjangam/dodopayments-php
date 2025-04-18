@@ -3,7 +3,7 @@
 
 
 
-# OutgoingWebhookData_1
+# Payment
 
 
 
@@ -32,7 +32,7 @@
     | tax | integer | ❌ | Amount of tax collected in smallest currency unit (e.g. cents) |
     | updatedAt | string | ❌ | Timestamp when the payment was last updated |
 
-# OutgoingWebhookData_1PayloadType
+# PaymentPayloadType
 
 
 
@@ -44,7 +44,7 @@
 
 
 
-# OutgoingWebhookData_2
+# Subscription
 
 
 
@@ -52,6 +52,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
+    | billing | model | ✅ |  |
     | createdAt | string | ✅ | Timestamp when the subscription was created |
     | currency | model | ✅ |  |
     | customer | model | ✅ |  |
@@ -72,7 +73,7 @@
     | cancelledAt | string | ❌ | Cancelled timestamp if the subscription is cancelled |
     | discountId | string | ❌ | The discount id if discount is applied |
 
-# OutgoingWebhookData_2PayloadType
+# SubscriptionPayloadType
 
 
 
@@ -84,7 +85,7 @@
 
 
 
-# OutgoingWebhookData_3
+# Refund
 
 
 
@@ -102,7 +103,7 @@
     | currency | model | ❌ |  |
     | reason | string | ❌ | The reason provided for the refund, if any. Optional. |
 
-# OutgoingWebhookData_3PayloadType
+# RefundPayloadType
 
 
 
@@ -114,7 +115,7 @@
 
 
 
-# OutgoingWebhookData_4
+# Dispute
 
 
 
@@ -132,7 +133,7 @@
     | paymentId | string | ✅ | The unique identifier of the payment associated with the dispute. |
     | payloadType | model | ✅ |  |
 
-# OutgoingWebhookData_4PayloadType
+# DisputePayloadType
 
 
 
@@ -144,7 +145,7 @@
 
 
 
-# OutgoingWebhookData_5
+# LicenseKey
 
 
 
@@ -166,7 +167,7 @@
     | expiresAt | string | ❌ | The timestamp indicating when the license key expires, in UTC. |
     | subscriptionId | string | ❌ | The unique identifier of the subscription associated with the license key, if any. |
 
-# OutgoingWebhookData_5PayloadType
+# LicenseKeyPayloadType
 
 
 

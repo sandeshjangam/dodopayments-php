@@ -1,4 +1,4 @@
-# OutgoingWebhookData_3
+# Refund
 
 
 
@@ -16,7 +16,7 @@
     | currency | model | ❌ |  |
     | reason | string | ❌ | The reason provided for the refund, if any. Optional. |
 
-# OutgoingWebhookData_3PayloadType
+# RefundPayloadType
 
 
 

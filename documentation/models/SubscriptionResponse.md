@@ -6,6 +6,7 @@ Response struct representing subscription details
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
+    | billing | model | ✅ |  |
     | createdAt | string | ✅ | Timestamp when the subscription was created |
     | currency | model | ✅ |  |
     | customer | model | ✅ |  |

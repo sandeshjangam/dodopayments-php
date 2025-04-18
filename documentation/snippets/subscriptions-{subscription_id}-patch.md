@@ -2,6 +2,7 @@
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\BillingAddress;
 use Dodopayments\Models\SubscriptionStatus;
 use Dodopayments\Models\PatchSubscriptionRequest;
 
@@ -9,8 +10,10 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\PatchSubscriptionRequest(
+  billing: $billingAddress,
   metadata: [],
-  status: $subscriptionStatus
+  status: $subscriptionStatus,
+  taxId: "tax_id"
 );
 
 $response = $sdk->subscriptions->patchSubscriptionHandler(

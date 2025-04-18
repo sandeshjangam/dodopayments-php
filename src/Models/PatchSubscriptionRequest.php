@@ -8,15 +8,27 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 
 class PatchSubscriptionRequest
 {
+    #[SerializedName('billing')]
+    public ?BillingAddress $billing;
+
     #[SerializedName('metadata')]
     public ?array $metadata;
 
     #[SerializedName('status')]
     public ?SubscriptionStatus $status;
 
-    public function __construct(?array $metadata = [], ?SubscriptionStatus $status = null)
-    {
+    #[SerializedName('tax_id')]
+    public ?string $taxId;
+
+    public function __construct(
+        ?BillingAddress $billing = null,
+        ?array $metadata = [],
+        ?SubscriptionStatus $status = null,
+        ?string $taxId = null
+    ) {
+        $this->billing = $billing;
         $this->metadata = $metadata;
         $this->status = $status;
+        $this->taxId = $taxId;
     }
 }

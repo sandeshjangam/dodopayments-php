@@ -6,6 +6,4 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class CustomerRequest
-{
-}
+class CustomerRequest {}

@@ -1,4 +1,4 @@
-# Price_1Type
+# SubscriptionPayloadType
 
 
 
@@ -6,7 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
-    | OneTimePrice | string |  | one_time_price |
+    | Subscription | string |  | Subscription |
 
 
 

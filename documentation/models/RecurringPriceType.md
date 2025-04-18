@@ -1,4 +1,4 @@
-# OutgoingWebhookData_3PayloadType
+# RecurringPriceType
 
 
 
@@ -6,7 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
-    | Refund | string |  | Refund |
+    | RecurringPrice | string |  | recurring_price |
 
 
 

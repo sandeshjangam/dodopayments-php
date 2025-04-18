@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class OutgoingWebhookData5
+class LicenseKey
 {
     /**
      * The maximum number of activations allowed for this license key.
@@ -78,7 +78,7 @@ class OutgoingWebhookData5
     public ?string $subscriptionId;
 
     #[SerializedName('payload_type')]
-    public OutgoingWebhookData5PayloadType $payloadType;
+    public LicenseKeyPayloadType $payloadType;
 
     public function __construct(
         ?int $activationsLimit = null,
@@ -93,7 +93,7 @@ class OutgoingWebhookData5
         string $productId,
         LicenseKeyStatus $status,
         ?string $subscriptionId = null,
-        OutgoingWebhookData5PayloadType $payloadType
+        LicenseKeyPayloadType $payloadType
     ) {
         $this->activationsLimit = $activationsLimit;
         $this->businessId = $businessId;

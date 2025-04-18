@@ -1,4 +1,4 @@
-# OutgoingWebhookData_1
+# Payment
 
 
 
@@ -27,7 +27,7 @@
     | tax | integer | ❌ | Amount of tax collected in smallest currency unit (e.g. cents) |
     | updatedAt | string | ❌ | Timestamp when the payment was last updated |
 
-# OutgoingWebhookData_1PayloadType
+# PaymentPayloadType
 
 
 

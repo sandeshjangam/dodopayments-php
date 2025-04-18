@@ -76,6 +76,7 @@ print_r($response);
 use Dodopayments\Client;
 use Dodopayments\Models\PaymentMethodTypes;
 use Dodopayments\Models\BillingAddress;
+use Dodopayments\Models\Currency;
 use Dodopayments\Models\CustomerRequest;
 use Dodopayments\Models\OnDemandSubscriptionReq;
 use Dodopayments\Models\CreateSubscriptionRequest;
@@ -97,6 +98,7 @@ COMPLEX_MODEL_NOT_IMPLEMENTED
 $input = new Models\CreateSubscriptionRequest(
   allowedPaymentMethodTypes: [],
   billing: $billingAddress,
+  billingCurrency: $currency,
   customer: $customerRequest,
   discountCode: "discount_code",
   metadata: [],
@@ -105,8 +107,9 @@ $input = new Models\CreateSubscriptionRequest(
   productId: "product_id",
   quantity: 8,
   returnUrl: "return_url",
+  showSavedPaymentMethods: true,
   taxId: "tax_id",
-  trialPeriodDays: 10
+  trialPeriodDays: 8
 );
 
 $response = $sdk->subscriptions->createSubscriptionHandler(
@@ -169,6 +172,7 @@ print_r($response);
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\BillingAddress;
 use Dodopayments\Models\SubscriptionStatus;
 use Dodopayments\Models\PatchSubscriptionRequest;
 
@@ -176,8 +180,10 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\PatchSubscriptionRequest(
+  billing: $billingAddress,
   metadata: [],
-  status: $subscriptionStatus
+  status: $subscriptionStatus,
+  taxId: "tax_id"
 );
 
 $response = $sdk->subscriptions->patchSubscriptionHandler(
@@ -216,7 +222,7 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\CreateSubscriptionChargeRequest(
-  productPrice: 9
+  productPrice: 123
 );
 
 $response = $sdk->subscriptions->createSubscriptionCharge(

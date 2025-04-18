@@ -1,4 +1,4 @@
-# OutgoingWebhookData_5
+# LicenseKey
 
 
 
@@ -20,7 +20,7 @@
     | expiresAt | string | ❌ | The timestamp indicating when the license key expires, in UTC. |
     | subscriptionId | string | ❌ | The unique identifier of the subscription associated with the license key, if any. |
 
-# OutgoingWebhookData_5PayloadType
+# LicenseKeyPayloadType
 
 
 

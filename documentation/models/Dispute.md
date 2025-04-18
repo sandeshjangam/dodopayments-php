@@ -1,4 +1,4 @@
-# OutgoingWebhookData_4
+# Dispute
 
 
 
@@ -16,7 +16,7 @@
     | paymentId | string | ✅ | The unique identifier of the payment associated with the dispute. |
     | payloadType | model | ✅ |  |
 
-# OutgoingWebhookData_4PayloadType
+# DisputePayloadType
 
 
 

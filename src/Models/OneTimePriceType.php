@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-enum OutgoingWebhookData4PayloadType: string
+enum OneTimePriceType: string
 {
-    case Dispute = 'Dispute';
+    case OneTimePrice = 'one_time_price';
 }

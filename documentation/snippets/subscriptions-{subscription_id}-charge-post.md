@@ -8,7 +8,7 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\CreateSubscriptionChargeRequest(
-  productPrice: 9
+  productPrice: 123
 );
 
 $response = $sdk->subscriptions->createSubscriptionCharge(

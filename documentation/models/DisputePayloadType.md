@@ -1,4 +1,4 @@
-# OutgoingWebhookData_5PayloadType
+# DisputePayloadType
 
 
 
@@ -6,7 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
-    | LicenseKey | string |  | LicenseKey |
+    | Dispute | string |  | Dispute |
 
 
 
