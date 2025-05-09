@@ -1,4 +1,4 @@
-# DisputeResponse
+# ListDisputeResponse
 
 
 
@@ -14,7 +14,6 @@
     | disputeStage | model | ✅ |  |
     | disputeStatus | model | ✅ |  |
     | paymentId | string | ✅ | The unique identifier of the payment associated with the dispute. |
-    | remarks | string | ❌ | Remarks |
 
 
 

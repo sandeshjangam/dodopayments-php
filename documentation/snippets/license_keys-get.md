@@ -8,8 +8,8 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 $status = Models\LicenseKeyStatus::Active;
 
 $response = $sdk->licenseKeys->listLicenseKeysHandler(
-  pageSize: 7,
-  pageNumber: 6,
+  pageSize: 9,
+  pageNumber: 9,
   customerId: "customer_id",
   status: $status,
   productId: "product_id"

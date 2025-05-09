@@ -33,10 +33,10 @@ class Disputes extends BaseService
         return Serializer::deserialize($data, Models\GetDisputesListResponse::class);
     }
 
-    public function getDisputeHandler(string $disputeId): Models\DisputeResponse
+    public function getDisputeHandler(string $disputeId): Models\GetDisputeResponse
     {
         $data = $this->sendRequest('get', "/disputes/{$disputeId}", []);
 
-        return Serializer::deserialize($data, Models\DisputeResponse::class);
+        return Serializer::deserialize($data, Models\GetDisputeResponse::class);
     }
 }

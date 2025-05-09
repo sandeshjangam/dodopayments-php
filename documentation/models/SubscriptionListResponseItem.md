@@ -1,4 +1,4 @@
-# SubscriptionResponse
+# SubscriptionListResponseItem
 
 Response struct representing subscription details
 
@@ -6,7 +6,6 @@ Response struct representing subscription details
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
-    | addons | array | ✅ | Addons associated with this subscription |
     | billing | model | ✅ |  |
     | createdAt | string | ✅ | Timestamp when the subscription was created |
     | currency | model | ✅ |  |

@@ -25,9 +25,9 @@ COMPLEX_MODEL_NOT_IMPLEMENTED
 
 
 $oneTimeProductCartItemReq = new Models\OneTimeProductCartItemReq(
-  amount: 10,
+  amount: 5,
   productId: "product_id",
-  quantity: 10
+  quantity: 2
 );
 
 $input = new Models\CreateOneTimePaymentRequest(

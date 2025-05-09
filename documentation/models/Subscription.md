@@ -6,14 +6,17 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
+    | addons | array | ✅ | Addons associated with this subscription |
     | billing | model | ✅ |  |
     | createdAt | string | ✅ | Timestamp when the subscription was created |
     | currency | model | ✅ |  |
     | customer | model | ✅ |  |
     | metadata | dictionary | ✅ |  |
-    | nextBillingDate | string | ✅ | Timestamp of the next scheduled billing |
+    | nextBillingDate | string | ✅ | Timestamp of the next scheduled billing. Indicates the end of current billing period |
+    | onDemand | boolean | ✅ | Wether the subscription is on-demand or not |
     | paymentFrequencyCount | integer | ✅ | Number of payment frequency intervals |
     | paymentFrequencyInterval | model | ✅ |  |
+    | previousBillingDate | string | ✅ | Timestamp of the last payment. Indicates the start of current billing period |
     | productId | string | ✅ | Identifier of the product associated with this subscription |
     | quantity | integer | ✅ | Number of units/items included in the subscription |
     | recurringPreTaxAmount | integer | ✅ | Amount charged before tax for each recurring payment in smallest currency unit (e.g. cents) |

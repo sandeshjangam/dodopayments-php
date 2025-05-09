@@ -9,7 +9,7 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 class GetSubscriptionsListResponse
 {
     /**
-     * @var SubscriptionResponse[]
+     * @var SubscriptionListResponseItem[]
      */
     #[SerializedName('items')]
     public array $items;

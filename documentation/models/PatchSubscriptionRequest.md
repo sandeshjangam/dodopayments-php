@@ -7,6 +7,7 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | billing | model | ❌ |  |
+    | disableOnDemand | model | ❌ |  |
     | metadata | dictionary | ❌ |  |
     | status | model | ❌ |  |
     | taxId | string | ❌ |  |

@@ -15,6 +15,13 @@ It includes details about the product, quantity, customer information, and billi
 class CreateSubscriptionRequest
 {
     /**
+     * @var AttachAddonReq[]|null
+     * Attach addons to this subscription
+     */
+    #[SerializedName('addons')]
+    public ?array $addons;
+
+    /**
 	 * @var PaymentMethodTypes[]|null
 	 * List of payment methods allowed during checkout.
 
@@ -93,6 +100,7 @@ Must be between 0 and 10000 days
     public ?int $trialPeriodDays;
 
     public function __construct(
+        ?array $addons = [],
         ?array $allowedPaymentMethodTypes = [],
         BillingAddress $billing,
         ?Currency $billingCurrency = null,
@@ -108,6 +116,7 @@ Must be between 0 and 10000 days
         ?string $taxId = null,
         ?int $trialPeriodDays = null
     ) {
+        $this->addons = $addons;
         $this->allowedPaymentMethodTypes = $allowedPaymentMethodTypes;
         $this->billing = $billing;
         $this->billingCurrency = $billingCurrency;

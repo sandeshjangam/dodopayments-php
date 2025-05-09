@@ -9,6 +9,13 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 class CreateSubscriptionResponse
 {
     /**
+     * @var AddonCartResponseItem[]
+     * Addons associated with this subscription
+     */
+    #[SerializedName('addons')]
+    public array $addons;
+
+    /**
 	 * Client secret used to load Dodo checkout SDK
 NOTE : Dodo checkout SDK will be coming soon
 	 */
@@ -46,6 +53,7 @@ NOTE : Dodo checkout SDK will be coming soon
     public string $subscriptionId;
 
     public function __construct(
+        array $addons,
         ?string $clientSecret = null,
         CustomerLimitedDetailsResponse $customer,
         ?string $discountId = null,
@@ -54,6 +62,7 @@ NOTE : Dodo checkout SDK will be coming soon
         int $recurringPreTaxAmount,
         string $subscriptionId
     ) {
+        $this->addons = $addons;
         $this->clientSecret = $clientSecret;
         $this->customer = $customer;
         $this->discountId = $discountId;

@@ -17,7 +17,7 @@ $input = new Models\CreateProductRequest(
   addons: [],
   description: "description",
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 1,
+  licenseKeyActivationsLimit: 7,
   licenseKeyDuration: $licenseKeyDuration,
   licenseKeyEnabled: true,
   name: "name",

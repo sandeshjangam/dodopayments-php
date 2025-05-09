@@ -67,7 +67,7 @@ print_r($response);
 
 **Return Type**
 
-`Models\DisputeResponse`
+`Models\GetDisputeResponse`
 
 **Example Usage Code Snippet**
 ```php

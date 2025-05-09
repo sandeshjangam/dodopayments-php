@@ -40,8 +40,8 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->products->listProductsHandler(
-  pageSize: 2,
-  pageNumber: 4,
+  pageSize: 123,
+  pageNumber: 8,
   archived: true,
   recurring: true
 );
@@ -85,7 +85,7 @@ $input = new Models\CreateProductRequest(
   addons: [],
   description: "description",
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 1,
+  licenseKeyActivationsLimit: 7,
   licenseKeyDuration: $licenseKeyDuration,
   licenseKeyEnabled: true,
   name: "name",
@@ -166,7 +166,7 @@ $input = new Models\PatchProductRequest(
   description: "description",
   imageId: "image_id",
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 7,
+  licenseKeyActivationsLimit: 4,
   licenseKeyDuration: $licenseKeyDuration,
   licenseKeyEnabled: true,
   name: "name",

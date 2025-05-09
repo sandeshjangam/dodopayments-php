@@ -10,8 +10,8 @@ $response = $sdk->webhookEvents->listWebhookEvents(
   createdAtLte: "created_at_lte",
   limit: 6,
   objectId: "object_id",
-  pageSize: 10,
-  pageNumber: 10
+  pageSize: 3,
+  pageNumber: 8
 );
 
 print_r($response);

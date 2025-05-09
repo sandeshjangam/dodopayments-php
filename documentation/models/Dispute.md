@@ -10,11 +10,14 @@
     | businessId | string | ✅ | The unique identifier of the business involved in the dispute. |
     | createdAt | string | ✅ | The timestamp of when the dispute was created, in UTC. |
     | currency | string | ✅ | The currency of the disputed amount, represented as an ISO 4217 currency code. |
+    | customer | model | ✅ |  |
     | disputeId | string | ✅ | The unique identifier of the dispute. |
     | disputeStage | model | ✅ |  |
     | disputeStatus | model | ✅ |  |
     | paymentId | string | ✅ | The unique identifier of the payment associated with the dispute. |
     | payloadType | model | ✅ |  |
+    | reason | string | ❌ | Reason for the dispute |
+    | remarks | string | ❌ | Remarks |
 
 # DisputePayloadType
 

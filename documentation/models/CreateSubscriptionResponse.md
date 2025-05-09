@@ -6,6 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
+    | addons | array | ✅ | Addons associated with this subscription |
     | customer | model | ✅ |  |
     | metadata | dictionary | ✅ |  |
     | recurringPreTaxAmount | integer | ✅ | Tax will be added to the amount and charged to the customer on each billing cycle |

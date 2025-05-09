@@ -6,8 +6,8 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->licenseKeys->listLicenseKeyInstances(
-  pageSize: 9,
-  pageNumber: 9,
+  pageSize: 6,
+  pageNumber: 4,
   licenseKeyId: "license_key_id"
 );
 

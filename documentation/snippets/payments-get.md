@@ -10,8 +10,8 @@ $status = Models\IntentStatus::Succeeded;
 $response = $sdk->payments->listPaymentsHandler(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 3,
-  pageNumber: 9,
+  pageSize: 10,
+  pageNumber: 10,
   customerId: "customer_id",
   subscriptionId: "subscription_id",
   status: $status

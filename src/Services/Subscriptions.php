@@ -57,6 +57,17 @@ class Subscriptions extends BaseService
         return Serializer::deserialize($data, Models\SubscriptionResponse::class);
     }
 
+    public function updateSubscriptionPlanHandler(
+        Models\UpdateSubscriptionPlanReq $input,
+        string $subscriptionId
+    ): mixed {
+        $data = $this->sendRequest('post', "/subscriptions/{$subscriptionId}/change-plan", [
+            'json' => Serializer::serialize($input),
+        ]);
+
+        return json_decode($data, true);
+    }
+
     public function createSubscriptionCharge(
         Models\CreateSubscriptionChargeRequest $input,
         string $subscriptionId

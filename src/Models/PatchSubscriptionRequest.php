@@ -11,6 +11,9 @@ class PatchSubscriptionRequest
     #[SerializedName('billing')]
     public ?BillingAddress $billing;
 
+    #[SerializedName('disable_on_demand')]
+    public ?DisableOnDemandReq $disableOnDemand;
+
     #[SerializedName('metadata')]
     public ?array $metadata;
 
@@ -22,11 +25,13 @@ class PatchSubscriptionRequest
 
     public function __construct(
         ?BillingAddress $billing = null,
+        ?DisableOnDemandReq $disableOnDemand = null,
         ?array $metadata = [],
         ?SubscriptionStatus $status = null,
         ?string $taxId = null
     ) {
         $this->billing = $billing;
+        $this->disableOnDemand = $disableOnDemand;
         $this->metadata = $metadata;
         $this->status = $status;
         $this->taxId = $taxId;

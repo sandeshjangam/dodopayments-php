@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class DisputeResponse
+class ListDisputeResponse
 {
     /**
      * The amount involved in the dispute, represented as a string to accommodate precision.
@@ -50,12 +50,6 @@ class DisputeResponse
     #[SerializedName('payment_id')]
     public string $paymentId;
 
-    /**
-     * Remarks
-     */
-    #[SerializedName('remarks')]
-    public ?string $remarks;
-
     public function __construct(
         string $amount,
         string $businessId,
@@ -64,8 +58,7 @@ class DisputeResponse
         string $disputeId,
         DisputeStage $disputeStage,
         DisputeStatus $disputeStatus,
-        string $paymentId,
-        ?string $remarks = null
+        string $paymentId
     ) {
         $this->amount = $amount;
         $this->businessId = $businessId;
@@ -75,6 +68,5 @@ class DisputeResponse
         $this->disputeStage = $disputeStage;
         $this->disputeStatus = $disputeStatus;
         $this->paymentId = $paymentId;
-        $this->remarks = $remarks;
     }
 }

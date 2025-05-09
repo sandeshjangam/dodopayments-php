@@ -9,7 +9,7 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 class GetDisputesListResponse
 {
     /**
-     * @var DisputeResponse[]
+     * @var ListDisputeResponse[]
      */
     #[SerializedName('items')]
     public array $items;

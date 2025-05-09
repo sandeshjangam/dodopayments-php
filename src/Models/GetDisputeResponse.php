@@ -6,7 +6,7 @@ namespace Dodopayments\Models;
 
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
-class DisputeResponse
+class GetDisputeResponse
 {
     /**
      * The amount involved in the dispute, represented as a string to accommodate precision.
@@ -32,6 +32,9 @@ class DisputeResponse
     #[SerializedName('currency')]
     public string $currency;
 
+    #[SerializedName('customer')]
+    public CustomerLimitedDetailsResponse $customer;
+
     /**
      * The unique identifier of the dispute.
      */
@@ -51,6 +54,12 @@ class DisputeResponse
     public string $paymentId;
 
     /**
+     * Reason for the dispute
+     */
+    #[SerializedName('reason')]
+    public ?string $reason;
+
+    /**
      * Remarks
      */
     #[SerializedName('remarks')]
@@ -61,20 +70,24 @@ class DisputeResponse
         string $businessId,
         string $createdAt,
         string $currency,
+        CustomerLimitedDetailsResponse $customer,
         string $disputeId,
         DisputeStage $disputeStage,
         DisputeStatus $disputeStatus,
         string $paymentId,
+        ?string $reason = null,
         ?string $remarks = null
     ) {
         $this->amount = $amount;
         $this->businessId = $businessId;
         $this->createdAt = $createdAt;
         $this->currency = $currency;
+        $this->customer = $customer;
         $this->disputeId = $disputeId;
         $this->disputeStage = $disputeStage;
         $this->disputeStatus = $disputeStatus;
         $this->paymentId = $paymentId;
+        $this->reason = $reason;
         $this->remarks = $remarks;
     }
 }

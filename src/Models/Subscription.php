@@ -8,6 +8,13 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 
 class Subscription
 {
+    /**
+     * @var AddonCartResponseItem[]
+     * Addons associated with this subscription
+     */
+    #[SerializedName('addons')]
+    public array $addons;
+
     #[SerializedName('billing')]
     public BillingAddress $billing;
 
@@ -39,10 +46,16 @@ class Subscription
     public array $metadata;
 
     /**
-     * Timestamp of the next scheduled billing
+     * Timestamp of the next scheduled billing. Indicates the end of current billing period
      */
     #[SerializedName('next_billing_date')]
     public string $nextBillingDate;
+
+    /**
+     * Wether the subscription is on-demand or not
+     */
+    #[SerializedName('on_demand')]
+    public bool $onDemand;
 
     /**
      * Number of payment frequency intervals
@@ -52,6 +65,12 @@ class Subscription
 
     #[SerializedName('payment_frequency_interval')]
     public TimeInterval $paymentFrequencyInterval;
+
+    /**
+     * Timestamp of the last payment. Indicates the start of current billing period
+     */
+    #[SerializedName('previous_billing_date')]
+    public string $previousBillingDate;
 
     /**
      * Identifier of the product associated with this subscription
@@ -105,6 +124,7 @@ class Subscription
     public SubscriptionPayloadType $payloadType;
 
     public function __construct(
+        array $addons,
         BillingAddress $billing,
         ?string $cancelledAt = null,
         string $createdAt,
@@ -113,8 +133,10 @@ class Subscription
         ?string $discountId = null,
         array $metadata,
         string $nextBillingDate,
+        bool $onDemand,
         int $paymentFrequencyCount,
         TimeInterval $paymentFrequencyInterval,
+        string $previousBillingDate,
         string $productId,
         int $quantity,
         int $recurringPreTaxAmount,
@@ -126,6 +148,7 @@ class Subscription
         int $trialPeriodDays,
         SubscriptionPayloadType $payloadType
     ) {
+        $this->addons = $addons;
         $this->billing = $billing;
         $this->cancelledAt = $cancelledAt;
         $this->createdAt = $createdAt;
@@ -134,8 +157,10 @@ class Subscription
         $this->discountId = $discountId;
         $this->metadata = $metadata;
         $this->nextBillingDate = $nextBillingDate;
+        $this->onDemand = $onDemand;
         $this->paymentFrequencyCount = $paymentFrequencyCount;
         $this->paymentFrequencyInterval = $paymentFrequencyInterval;
+        $this->previousBillingDate = $previousBillingDate;
         $this->productId = $productId;
         $this->quantity = $quantity;
         $this->recurringPreTaxAmount = $recurringPreTaxAmount;

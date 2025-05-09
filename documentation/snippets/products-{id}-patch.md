@@ -15,7 +15,7 @@ $input = new Models\PatchProductRequest(
   description: "description",
   imageId: "image_id",
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 7,
+  licenseKeyActivationsLimit: 4,
   licenseKeyDuration: $licenseKeyDuration,
   licenseKeyEnabled: true,
   name: "name",

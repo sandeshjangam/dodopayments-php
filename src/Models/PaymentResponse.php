@@ -8,11 +8,38 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 
 class PaymentResponse
 {
+    #[SerializedName('billing')]
+    public BillingAddress $billing;
+
     /**
      * Identifier of the business associated with the payment
      */
     #[SerializedName('business_id')]
     public string $businessId;
+
+    /**
+     * ISO country code alpha2 variant
+     */
+    #[SerializedName('card_issuing_country')]
+    public ?CountryCodeAlpha2 $cardIssuingCountry;
+
+    /**
+     * The last four digits of the card
+     */
+    #[SerializedName('card_last_four')]
+    public ?string $cardLastFour;
+
+    /**
+     * Card network like VISA, MASTERCARD etc.
+     */
+    #[SerializedName('card_network')]
+    public ?string $cardNetwork;
+
+    /**
+     * The type of card DEBIT or CREDIT
+     */
+    #[SerializedName('card_type')]
+    public ?string $cardType;
 
     /**
      * Timestamp when the payment was created
@@ -86,6 +113,24 @@ class PaymentResponse
     #[SerializedName('refunds')]
     public array $refunds;
 
+    /**
+	 * The amount that will be credited to your Dodo balance after currency conversion and processing.
+Especially relevant for adaptive pricing where the customer's payment currency differs from your settlement currency.
+	 */
+    #[SerializedName('settlement_amount')]
+    public int $settlementAmount;
+
+    #[SerializedName('settlement_currency')]
+    public Currency $settlementCurrency;
+
+    /**
+	 * This represents the portion of settlement_amount that corresponds to taxes collected.
+Especially relevant for adaptive pricing where the tax component must be tracked separately
+in your Dodo balance.
+	 */
+    #[SerializedName('settlement_tax')]
+    public ?int $settlementTax;
+
     #[SerializedName('status')]
     public ?IntentStatus $status;
 
@@ -114,7 +159,12 @@ class PaymentResponse
     public ?string $updatedAt;
 
     public function __construct(
+        BillingAddress $billing,
         string $businessId,
+        ?CountryCodeAlpha2 $cardIssuingCountry = null,
+        ?string $cardLastFour = null,
+        ?string $cardNetwork = null,
+        ?string $cardType = null,
         string $createdAt,
         Currency $currency,
         CustomerLimitedDetailsResponse $customer,
@@ -128,13 +178,21 @@ class PaymentResponse
         ?string $paymentMethodType = null,
         ?array $productCart = [],
         array $refunds,
+        int $settlementAmount,
+        Currency $settlementCurrency,
+        ?int $settlementTax = null,
         ?IntentStatus $status = null,
         ?string $subscriptionId = null,
         ?int $tax = null,
         int $totalAmount,
         ?string $updatedAt = null
     ) {
+        $this->billing = $billing;
         $this->businessId = $businessId;
+        $this->cardIssuingCountry = $cardIssuingCountry;
+        $this->cardLastFour = $cardLastFour;
+        $this->cardNetwork = $cardNetwork;
+        $this->cardType = $cardType;
         $this->createdAt = $createdAt;
         $this->currency = $currency;
         $this->customer = $customer;
@@ -148,6 +206,9 @@ class PaymentResponse
         $this->paymentMethodType = $paymentMethodType;
         $this->productCart = $productCart;
         $this->refunds = $refunds;
+        $this->settlementAmount = $settlementAmount;
+        $this->settlementCurrency = $settlementCurrency;
+        $this->settlementTax = $settlementTax;
         $this->status = $status;
         $this->subscriptionId = $subscriptionId;
         $this->tax = $tax;

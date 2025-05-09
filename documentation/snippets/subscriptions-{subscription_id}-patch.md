@@ -3,6 +3,7 @@
 
 use Dodopayments\Client;
 use Dodopayments\Models\BillingAddress;
+use Dodopayments\Models\DisableOnDemandReq;
 use Dodopayments\Models\SubscriptionStatus;
 use Dodopayments\Models\PatchSubscriptionRequest;
 
@@ -11,6 +12,7 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $input = new Models\PatchSubscriptionRequest(
   billing: $billingAddress,
+  disableOnDemand: $disableOnDemandReq,
   metadata: [],
   status: $subscriptionStatus,
   taxId: "tax_id"

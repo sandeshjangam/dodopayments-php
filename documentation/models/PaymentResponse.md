@@ -6,6 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
+    | billing | model | ✅ |  |
     | businessId | string | ✅ | Identifier of the business associated with the payment |
     | createdAt | string | ✅ | Timestamp when the payment was created |
     | currency | model | ✅ |  |
@@ -14,13 +15,20 @@
     | metadata | dictionary | ✅ |  |
     | paymentId | string | ✅ | Unique identifier for the payment |
     | refunds | array | ✅ | List of refunds issued for this payment |
+    | settlementAmount | integer | ✅ | The amount that will be credited to your Dodo balance after currency conversion and processing. Especially relevant for adaptive pricing where the customer's payment currency differs from your settlement currency. |
+    | settlementCurrency | model | ✅ |  |
     | totalAmount | integer | ✅ | Total amount charged to the customer including tax, in smallest currency unit (e.g. cents) |
+    | cardIssuingCountry | model | ❌ | ISO country code alpha2 variant |
+    | cardLastFour | string | ❌ | The last four digits of the card |
+    | cardNetwork | string | ❌ | Card network like VISA, MASTERCARD etc. |
+    | cardType | string | ❌ | The type of card DEBIT or CREDIT |
     | discountId | string | ❌ | The discount id if discount is applied |
     | errorMessage | string | ❌ | An error message if the payment failed |
     | paymentLink | string | ❌ | Checkout URL |
     | paymentMethod | string | ❌ | Payment method used by customer (e.g. "card", "bank_transfer") |
     | paymentMethodType | string | ❌ | Specific type of payment method (e.g. "visa", "mastercard") |
     | productCart | array | ❌ | List of products purchased in a one-time payment |
+    | settlementTax | integer | ❌ | This represents the portion of settlement_amount that corresponds to taxes collected. Especially relevant for adaptive pricing where the tax component must be tracked separately in your Dodo balance. |
     | status | model | ❌ |  |
     | subscriptionId | string | ❌ | Identifier of the subscription if payment is part of a subscription |
     | tax | integer | ❌ | Amount of tax collected in smallest currency unit (e.g. cents) |

@@ -9,15 +9,8 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 /**
  * Response struct representing subscription details
  */
-class SubscriptionResponse
+class SubscriptionListResponseItem
 {
-    /**
-     * @var AddonCartResponseItem[]
-     * Addons associated with this subscription
-     */
-    #[SerializedName('addons')]
-    public array $addons;
-
     #[SerializedName('billing')]
     public BillingAddress $billing;
 
@@ -124,7 +117,6 @@ class SubscriptionResponse
     public int $trialPeriodDays;
 
     public function __construct(
-        array $addons,
         BillingAddress $billing,
         ?string $cancelledAt = null,
         string $createdAt,
@@ -147,7 +139,6 @@ class SubscriptionResponse
         bool $taxInclusive,
         int $trialPeriodDays
     ) {
-        $this->addons = $addons;
         $this->billing = $billing;
         $this->cancelledAt = $cancelledAt;
         $this->createdAt = $createdAt;

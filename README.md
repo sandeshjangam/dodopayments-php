@@ -1,4 +1,4 @@
-# dodopayments PHP SDK 1.16.1
+# dodopayments PHP SDK 1.22.0
 
 
 Welcome to the dodopayments SDK documentation. This guide will help you get started with integrating and using the dodopayments SDK in your project.
@@ -7,8 +7,8 @@ Welcome to the dodopayments SDK documentation. This guide will help you get star
 
 ## Versions
 
-- API version: `1.16.1`
-- SDK version: `1.16.1`
+- API version: `1.22.0`
+- SDK version: `1.22.0`
 
 ## Table of Contents
 - [Setup & Configuration](#setup--configuration)
@@ -163,7 +163,7 @@ The SDK includes several models that represent the data structures used in API r
 | [GetDisputesListResponse](documentation/models/GetDisputesListResponse.md) |  |
 | [DisputeStatus](documentation/models/DisputeStatus.md) |  |
 | [DisputeStage](documentation/models/DisputeStage.md) |  |
-| [DisputeResponse](documentation/models/DisputeResponse.md) |  |
+| [GetDisputeResponse](documentation/models/GetDisputeResponse.md) |  |
 | [ListLicenseKeyInstancesResponse](documentation/models/ListLicenseKeyInstancesResponse.md) |  |
 | [LicenseKeyInstanceResponse](documentation/models/LicenseKeyInstanceResponse.md) |  |
 | [PatchLicenseKeyInstanceRequest](documentation/models/PatchLicenseKeyInstanceRequest.md) |  |
@@ -196,6 +196,7 @@ The SDK includes several models that represent the data structures used in API r
 | [CreateSubscriptionResponse](documentation/models/CreateSubscriptionResponse.md) |  |
 | [SubscriptionResponse](documentation/models/SubscriptionResponse.md) | Response struct representing subscription details |
 | [PatchSubscriptionRequest](documentation/models/PatchSubscriptionRequest.md) |  |
+| [UpdateSubscriptionPlanReq](documentation/models/UpdateSubscriptionPlanReq.md) |  |
 | [CreateSubscriptionChargeRequest](documentation/models/CreateSubscriptionChargeRequest.md) |  |
 | [CreateSubscriptionChargeResponse](documentation/models/CreateSubscriptionChargeResponse.md) |  |
 | [ListWebhookEventsResponse](documentation/models/ListWebhookEventsResponse.md) |  |
@@ -204,14 +205,16 @@ The SDK includes several models that represent the data structures used in API r
 | [Currency](documentation/models/Currency.md) |  |
 | [TaxCategory](documentation/models/TaxCategory.md) | Represents the different categories of taxation applicable to various products and services. |
 | [DiscountType](documentation/models/DiscountType.md) |  |
-| [GetPaymentsListResponseItem](documentation/models/GetPaymentsListResponseItem.md) |  |
+| [ListDisputeResponse](documentation/models/ListDisputeResponse.md) |  |
 | [CustomerLimitedDetailsResponse](documentation/models/CustomerLimitedDetailsResponse.md) |  |
+| [GetPaymentsListResponseItem](documentation/models/GetPaymentsListResponseItem.md) |  |
 | [PaymentMethodTypes](documentation/models/PaymentMethodTypes.md) |  |
 | [BillingAddress](documentation/models/BillingAddress.md) |  |
 | [CustomerRequest](documentation/models/CustomerRequest.md) |  |
 | [OneTimeProductCartItemReq](documentation/models/OneTimeProductCartItemReq.md) |  |
 | [AttachExistingCustomer](documentation/models/AttachExistingCustomer.md) |  |
 | [CreateNewCustomer](documentation/models/CreateNewCustomer.md) |  |
+| [DisputeResponse](documentation/models/DisputeResponse.md) |  |
 | [OneTimeProductCartItemResponse](documentation/models/OneTimeProductCartItemResponse.md) |  |
 | [PayoutsResponse](documentation/models/PayoutsResponse.md) |  |
 | [PayoutStatus](documentation/models/PayoutStatus.md) |  |
@@ -223,7 +226,12 @@ The SDK includes several models that represent the data structures used in API r
 | [TimeInterval](documentation/models/TimeInterval.md) |  |
 | [RecurringPriceType](documentation/models/RecurringPriceType.md) |  |
 | [LicenseKeyDuration](documentation/models/LicenseKeyDuration.md) |  |
+| [SubscriptionListResponseItem](documentation/models/SubscriptionListResponseItem.md) | Response struct representing subscription details |
+| [AttachAddonReq](documentation/models/AttachAddonReq.md) |  |
 | [OnDemandSubscriptionReq](documentation/models/OnDemandSubscriptionReq.md) |  |
+| [AddonCartResponseItem](documentation/models/AddonCartResponseItem.md) | Response struct representing subscription details |
+| [DisableOnDemandReq](documentation/models/DisableOnDemandReq.md) |  |
+| [ProrationBillingMode](documentation/models/ProrationBillingMode.md) |  |
 | [OutgoingWebhookData](documentation/models/OutgoingWebhookData.md) |  |
 | [EventType](documentation/models/EventType.md) | Event types for Dodo events |
 | [Payment](documentation/models/Payment.md) |  |

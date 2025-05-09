@@ -32,6 +32,9 @@ class Dispute
     #[SerializedName('currency')]
     public string $currency;
 
+    #[SerializedName('customer')]
+    public CustomerLimitedDetailsResponse $customer;
+
     /**
      * The unique identifier of the dispute.
      */
@@ -50,6 +53,18 @@ class Dispute
     #[SerializedName('payment_id')]
     public string $paymentId;
 
+    /**
+     * Reason for the dispute
+     */
+    #[SerializedName('reason')]
+    public ?string $reason;
+
+    /**
+     * Remarks
+     */
+    #[SerializedName('remarks')]
+    public ?string $remarks;
+
     #[SerializedName('payload_type')]
     public DisputePayloadType $payloadType;
 
@@ -58,20 +73,26 @@ class Dispute
         string $businessId,
         string $createdAt,
         string $currency,
+        CustomerLimitedDetailsResponse $customer,
         string $disputeId,
         DisputeStage $disputeStage,
         DisputeStatus $disputeStatus,
         string $paymentId,
+        ?string $reason = null,
+        ?string $remarks = null,
         DisputePayloadType $payloadType
     ) {
         $this->amount = $amount;
         $this->businessId = $businessId;
         $this->createdAt = $createdAt;
         $this->currency = $currency;
+        $this->customer = $customer;
         $this->disputeId = $disputeId;
         $this->disputeStage = $disputeStage;
         $this->disputeStatus = $disputeStatus;
         $this->paymentId = $paymentId;
+        $this->reason = $reason;
+        $this->remarks = $remarks;
         $this->payloadType = $payloadType;
     }
 }
