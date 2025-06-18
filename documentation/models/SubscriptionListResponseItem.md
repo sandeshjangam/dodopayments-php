@@ -7,6 +7,7 @@ Response struct representing subscription details
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | billing | model | ✅ |  |
+    | cancelAtNextBillingDate | boolean | ✅ | Indicates if the subscription will cancel at the next billing date |
     | createdAt | string | ✅ | Timestamp when the subscription was created |
     | currency | model | ✅ |  |
     | customer | model | ✅ |  |

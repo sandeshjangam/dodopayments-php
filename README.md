@@ -1,4 +1,4 @@
-# dodopayments PHP SDK 1.22.0
+# dodopayments PHP SDK 1.0.0
 
 
 Welcome to the dodopayments SDK documentation. This guide will help you get started with integrating and using the dodopayments SDK in your project.
@@ -7,8 +7,8 @@ Welcome to the dodopayments SDK documentation. This guide will help you get star
 
 ## Versions
 
-- API version: `1.22.0`
-- SDK version: `1.22.0`
+- API version: `1.34.0`
+- SDK version: `1.0.0`
 
 ## Table of Contents
 - [Setup & Configuration](#setup--configuration)
@@ -120,6 +120,7 @@ The SDK provides various services to interact with the API.
 | Name |
 | :--- |
 | [Addons](documentation/services/Addons.md) |
+| [Brands](documentation/services/Brands.md) |
 | [Checkout](documentation/services/Checkout.md) |
 | [Customers](documentation/services/Customers.md) |
 | [Discounts](documentation/services/Discounts.md) |
@@ -150,6 +151,11 @@ The SDK includes several models that represent the data structures used in API r
 | [AddonResponse](documentation/models/AddonResponse.md) |  |
 | [PatchAddonRequest](documentation/models/PatchAddonRequest.md) |  |
 | [UpdateAddonImageResponse](documentation/models/UpdateAddonImageResponse.md) |  |
+| [ListBrandsResponse](documentation/models/ListBrandsResponse.md) |  |
+| [CreateBrandRequest](documentation/models/CreateBrandRequest.md) |  |
+| [BrandResponse](documentation/models/BrandResponse.md) |  |
+| [PatchBrandRequest](documentation/models/PatchBrandRequest.md) |  |
+| [UpdateBrandImageResponse](documentation/models/UpdateBrandImageResponse.md) |  |
 | [CountryCodeAlpha2](documentation/models/CountryCodeAlpha2.md) | ISO country code alpha2 variant |
 | [GetCustomersListResponse](documentation/models/GetCustomersListResponse.md) |  |
 | [CreateCustomerRequest](documentation/models/CreateCustomerRequest.md) |  |
@@ -180,11 +186,14 @@ The SDK includes several models that represent the data structures used in API r
 | [CreateOneTimePaymentRequest](documentation/models/CreateOneTimePaymentRequest.md) |  |
 | [CreateOneTimePaymentResponse](documentation/models/CreateOneTimePaymentResponse.md) |  |
 | [PaymentResponse](documentation/models/PaymentResponse.md) |  |
+| [PaymentLineItemsResponse](documentation/models/PaymentLineItemsResponse.md) |  |
 | [GetPayoutsResponseList](documentation/models/GetPayoutsResponseList.md) |  |
 | [GetProductsListResponse](documentation/models/GetProductsListResponse.md) |  |
 | [CreateProductRequest](documentation/models/CreateProductRequest.md) |  |
 | [GetProductResponse](documentation/models/GetProductResponse.md) |  |
 | [PatchProductRequest](documentation/models/PatchProductRequest.md) |  |
+| [UploadProductFile](documentation/models/UploadProductFile.md) |  |
+| [UploadProductFileResponse](documentation/models/UploadProductFileResponse.md) |  |
 | [UpdateProductImageResponse](documentation/models/UpdateProductImageResponse.md) |  |
 | [GetRefundsListResponse](documentation/models/GetRefundsListResponse.md) |  |
 | [RefundStatus](documentation/models/RefundStatus.md) |  |
@@ -204,6 +213,7 @@ The SDK includes several models that represent the data structures used in API r
 | [OutgoingWebhook](documentation/models/OutgoingWebhook.md) |  |
 | [Currency](documentation/models/Currency.md) |  |
 | [TaxCategory](documentation/models/TaxCategory.md) | Represents the different categories of taxation applicable to various products and services. |
+| [BrandVerificationStatus](documentation/models/BrandVerificationStatus.md) |  |
 | [DiscountType](documentation/models/DiscountType.md) |  |
 | [ListDisputeResponse](documentation/models/ListDisputeResponse.md) |  |
 | [CustomerLimitedDetailsResponse](documentation/models/CustomerLimitedDetailsResponse.md) |  |
@@ -216,6 +226,7 @@ The SDK includes several models that represent the data structures used in API r
 | [CreateNewCustomer](documentation/models/CreateNewCustomer.md) |  |
 | [DisputeResponse](documentation/models/DisputeResponse.md) |  |
 | [OneTimeProductCartItemResponse](documentation/models/OneTimeProductCartItemResponse.md) |  |
+| [PaymentLineItem](documentation/models/PaymentLineItem.md) |  |
 | [PayoutsResponse](documentation/models/PayoutsResponse.md) |  |
 | [PayoutStatus](documentation/models/PayoutStatus.md) |  |
 | [GetProductsListResponseItem](documentation/models/GetProductsListResponseItem.md) |  |
@@ -225,7 +236,12 @@ The SDK includes several models that represent the data structures used in API r
 | [OneTimePriceType](documentation/models/OneTimePriceType.md) |  |
 | [TimeInterval](documentation/models/TimeInterval.md) |  |
 | [RecurringPriceType](documentation/models/RecurringPriceType.md) |  |
+| [CreateDigitalProductDeliveryRequest](documentation/models/CreateDigitalProductDeliveryRequest.md) |  |
 | [LicenseKeyDuration](documentation/models/LicenseKeyDuration.md) |  |
+| [DigitalProductDelivery](documentation/models/DigitalProductDelivery.md) |  |
+| [DigitalProductDeliveryFile](documentation/models/DigitalProductDeliveryFile.md) |  |
+| [PatchDigitalProductDeliveryRequest](documentation/models/PatchDigitalProductDeliveryRequest.md) |  |
+| [PartialRefundItem](documentation/models/PartialRefundItem.md) |  |
 | [SubscriptionListResponseItem](documentation/models/SubscriptionListResponseItem.md) | Response struct representing subscription details |
 | [AttachAddonReq](documentation/models/AttachAddonReq.md) |  |
 | [OnDemandSubscriptionReq](documentation/models/OnDemandSubscriptionReq.md) |  |

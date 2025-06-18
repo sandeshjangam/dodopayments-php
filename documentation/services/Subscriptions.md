@@ -27,6 +27,7 @@ A list of all methods in the `Subscriptions` service. Click on the method name t
 | $pageNumber | int | ❌ | Page number default is 0 |
 | $customerId | string | ❌ | Filter by customer id |
 | $status | Models\SubscriptionStatus | ❌ | Filter by status |
+| $brandId | string | ❌ | filter by Brand id |
 
 **Return Type**
 
@@ -45,10 +46,11 @@ $status = Models\SubscriptionStatus::Pending;
 $response = $sdk->subscriptions->listSubscriptionsHandler(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 5,
-  pageNumber: 123,
+  pageSize: 1,
+  pageNumber: 8,
   customerId: "customer_id",
-  status: $status
+  status: $status,
+  brandId: "brand_id"
 );
 
 print_r($response);
@@ -108,11 +110,11 @@ $input = new Models\CreateSubscriptionRequest(
   onDemand: $onDemandSubscriptionReq,
   paymentLink: true,
   productId: "product_id",
-  quantity: 9,
+  quantity: 4,
   returnUrl: "return_url",
   showSavedPaymentMethods: true,
   taxId: "tax_id",
-  trialPeriodDays: 6
+  trialPeriodDays: 4
 );
 
 $response = $sdk->subscriptions->createSubscriptionHandler(
@@ -185,6 +187,7 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $input = new Models\PatchSubscriptionRequest(
   billing: $billingAddress,
+  cancelAtNextBillingDate: true,
   disableOnDemand: $disableOnDemandReq,
   metadata: [],
   status: $subscriptionStatus,
@@ -233,7 +236,7 @@ $input = new Models\UpdateSubscriptionPlanReq(
   addons: [],
   productId: "product_id",
   prorationBillingMode: $prorationBillingMode,
-  quantity: 4
+  quantity: 6
 );
 
 $response = $sdk->subscriptions->updateSubscriptionPlanHandler(
@@ -272,7 +275,8 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\CreateSubscriptionChargeRequest(
-  productPrice: 8
+  metadata: [],
+  productPrice: 6
 );
 
 $response = $sdk->subscriptions->createSubscriptionCharge(

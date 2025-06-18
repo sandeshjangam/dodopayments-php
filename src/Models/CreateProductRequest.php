@@ -16,10 +16,19 @@ class CreateProductRequest
     public ?array $addons;
 
     /**
+     * Brand id for the product, if not provided will default to primary brand
+     */
+    #[SerializedName('brand_id')]
+    public ?string $brandId;
+
+    /**
      * Optional description of the product
      */
     #[SerializedName('description')]
     public ?string $description;
+
+    #[SerializedName('digital_product_delivery')]
+    public ?CreateDigitalProductDeliveryRequest $digitalProductDelivery;
 
     /**
      * Optional message displayed during license key activation
@@ -61,7 +70,9 @@ Defaults to false
 
     public function __construct(
         ?array $addons = [],
+        ?string $brandId = null,
         ?string $description = null,
+        ?CreateDigitalProductDeliveryRequest $digitalProductDelivery = null,
         ?string $licenseKeyActivationMessage = null,
         ?int $licenseKeyActivationsLimit = null,
         ?LicenseKeyDuration $licenseKeyDuration = null,
@@ -71,7 +82,9 @@ Defaults to false
         TaxCategory $taxCategory
     ) {
         $this->addons = $addons;
+        $this->brandId = $brandId;
         $this->description = $description;
+        $this->digitalProductDelivery = $digitalProductDelivery;
         $this->licenseKeyActivationMessage = $licenseKeyActivationMessage;
         $this->licenseKeyActivationsLimit = $licenseKeyActivationsLimit;
         $this->licenseKeyDuration = $licenseKeyDuration;

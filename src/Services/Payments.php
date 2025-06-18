@@ -16,7 +16,8 @@ class Payments extends BaseService
         int $pageNumber = null,
         string $customerId = null,
         string $subscriptionId = null,
-        Models\IntentStatus $status = null
+        Models\IntentStatus $status = null,
+        string $brandId = null
     ): Models\GetPaymentsListResponse {
         $data = $this->sendRequest('get', '/payments', [
             'query' => [
@@ -27,6 +28,7 @@ class Payments extends BaseService
                 'customer_id' => $customerId,
                 'subscription_id' => $subscriptionId,
                 'status' => $status,
+                'brand_id' => $brandId,
             ],
         ]);
 
@@ -46,5 +48,12 @@ class Payments extends BaseService
         $data = $this->sendRequest('get', "/payments/{$paymentId}", []);
 
         return Serializer::deserialize($data, Models\PaymentResponse::class);
+    }
+
+    public function getPaymentLineItemsHandler(string $paymentId): Models\PaymentLineItemsResponse
+    {
+        $data = $this->sendRequest('get', "/payments/{$paymentId}/line-items", []);
+
+        return Serializer::deserialize($data, Models\PaymentLineItemsResponse::class);
     }
 }

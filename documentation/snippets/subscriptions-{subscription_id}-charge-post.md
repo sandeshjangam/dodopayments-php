@@ -8,7 +8,8 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\CreateSubscriptionChargeRequest(
-  productPrice: 8
+  metadata: [],
+  productPrice: 6
 );
 
 $response = $sdk->subscriptions->createSubscriptionCharge(

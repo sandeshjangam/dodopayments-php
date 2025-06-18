@@ -7,6 +7,7 @@ A list of all methods in the `Payments` service. Click on the method name to vie
 |[list_payments_handler](#list_payments_handler)|  |
 |[create_one_time_payment_handler](#create_one_time_payment_handler)|  |
 |[get_payment_handler](#get_payment_handler)|  |
+|[get_payment_line_items_handler](#get_payment_line_items_handler)|  |
 
 ## list_payments_handler
 
@@ -25,6 +26,7 @@ A list of all methods in the `Payments` service. Click on the method name to vie
 | $customerId | string | ❌ | Filter by customer id |
 | $subscriptionId | string | ❌ | Filter by subscription id |
 | $status | Models\IntentStatus | ❌ | Filter by status |
+| $brandId | string | ❌ | filter by Brand id |
 
 **Return Type**
 
@@ -43,11 +45,12 @@ $status = Models\IntentStatus::Succeeded;
 $response = $sdk->payments->listPaymentsHandler(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 10,
-  pageNumber: 10,
+  pageSize: 5,
+  pageNumber: 4,
   customerId: "customer_id",
   subscriptionId: "subscription_id",
-  status: $status
+  status: $status,
+  brandId: "brand_id"
 );
 
 print_r($response);
@@ -97,9 +100,9 @@ COMPLEX_MODEL_NOT_IMPLEMENTED
 
 
 $oneTimeProductCartItemReq = new Models\OneTimeProductCartItemReq(
-  amount: 5,
+  amount: 10,
   productId: "product_id",
-  quantity: 2
+  quantity: 1
 );
 
 $input = new Models\CreateOneTimePaymentRequest(
@@ -148,6 +151,37 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->payments->getPaymentHandler(
+  paymentId: "payment_id"
+);
+
+print_r($response);
+```
+
+## get_payment_line_items_handler
+
+
+- HTTP Method: `GET`
+- Endpoint: `/payments/{payment_id}/line-items`
+
+**Parameters**
+
+| Name    | Type| Required | Description |
+| :-------- | :----------| :----------| :----------|
+| $paymentId | string | ✅ | Payment Id |
+
+**Return Type**
+
+`Models\PaymentLineItemsResponse`
+
+**Example Usage Code Snippet**
+```php
+<?php
+
+use Dodopayments\Client;
+
+$sdk = new Client(accessToken: 'YOUR_TOKEN');
+
+$response = $sdk->payments->getPaymentLineItemsHandler(
   paymentId: "payment_id"
 );
 

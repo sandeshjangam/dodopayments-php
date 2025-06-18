@@ -26,6 +26,7 @@ Event types for Dodo events
     | SubscriptionCancelled | string |  | subscription.cancelled |
     | SubscriptionFailed | string |  | subscription.failed |
     | SubscriptionExpired | string |  | subscription.expired |
+    | SubscriptionPlanChanged | string |  | subscription.plan_changed |
     | LicenseKeyCreated | string |  | license_key.created |
 
 

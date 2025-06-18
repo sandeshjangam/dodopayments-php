@@ -11,6 +11,7 @@ use Dodopayments\Services;
 class Client
 {
     public $addons;
+    public $brands;
     public $checkout;
     public $customers;
     public $discounts;
@@ -33,6 +34,7 @@ class Client
         float $timeout = 0
     ) {
         $this->addons = new Services\Addons($accessToken, $tokenPrefix, $environment, $timeout);
+        $this->brands = new Services\Brands($accessToken, $tokenPrefix, $environment, $timeout);
         $this->checkout = new Services\Checkout($accessToken, $tokenPrefix, $environment, $timeout);
         $this->customers = new Services\Customers($accessToken, $tokenPrefix, $environment, $timeout);
         $this->discounts = new Services\Discounts($accessToken, $tokenPrefix, $environment, $timeout);
@@ -52,6 +54,7 @@ class Client
     public function setBaseUrl(string $url)
     {
         $this->addons->setBaseUrl($url);
+        $this->brands->setBaseUrl($url);
         $this->checkout->setBaseUrl($url);
         $this->customers->setBaseUrl($url);
         $this->discounts->setBaseUrl($url);
@@ -71,6 +74,7 @@ class Client
     public function setAccessToken(string $accessToken)
     {
         $this->addons->setAccessToken($accessToken);
+        $this->brands->setAccessToken($accessToken);
         $this->checkout->setAccessToken($accessToken);
         $this->customers->setAccessToken($accessToken);
         $this->discounts->setAccessToken($accessToken);

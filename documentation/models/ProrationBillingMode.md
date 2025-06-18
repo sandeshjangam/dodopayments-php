@@ -7,6 +7,7 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | ProratedImmediately | string |  | prorated_immediately |
+    | FullImmediately | string |  | full_immediately |
 
 
 

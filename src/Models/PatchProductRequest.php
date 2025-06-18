@@ -15,11 +15,17 @@ class PatchProductRequest
     #[SerializedName('addons')]
     public ?array $addons;
 
+    #[SerializedName('brand_id')]
+    public ?string $brandId;
+
     /**
      * Description of the product, optional and must be at most 1000 characters.
      */
     #[SerializedName('description')]
     public ?string $description;
+
+    #[SerializedName('digital_product_delivery')]
+    public ?PatchDigitalProductDeliveryRequest $digitalProductDelivery;
 
     /**
      * Product image id after its uploaded to S3
@@ -74,7 +80,9 @@ become applicable.
 
     public function __construct(
         ?array $addons = [],
+        ?string $brandId = null,
         ?string $description = null,
+        ?PatchDigitalProductDeliveryRequest $digitalProductDelivery = null,
         ?string $imageId = null,
         ?string $licenseKeyActivationMessage = null,
         ?int $licenseKeyActivationsLimit = null,
@@ -85,7 +93,9 @@ become applicable.
         ?TaxCategory $taxCategory = null
     ) {
         $this->addons = $addons;
+        $this->brandId = $brandId;
         $this->description = $description;
+        $this->digitalProductDelivery = $digitalProductDelivery;
         $this->imageId = $imageId;
         $this->licenseKeyActivationMessage = $licenseKeyActivationMessage;
         $this->licenseKeyActivationsLimit = $licenseKeyActivationsLimit;

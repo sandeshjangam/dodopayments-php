@@ -2,12 +2,14 @@
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\PartialRefundItem;
 use Dodopayments\Models\CreateRefundRequest;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\CreateRefundRequest(
+  items: [],
   paymentId: "payment_id",
   reason: "reason"
 );

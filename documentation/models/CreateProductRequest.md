@@ -9,7 +9,9 @@
     | price | model | ✅ |  |
     | taxCategory | model | ✅ | Represents the different categories of taxation applicable to various products and services. |
     | addons | array | ❌ | Addons available for subscription product |
+    | brandId | string | ❌ | Brand id for the product, if not provided will default to primary brand |
     | description | string | ❌ | Optional description of the product |
+    | digitalProductDelivery | model | ❌ |  |
     | licenseKeyActivationMessage | string | ❌ | Optional message displayed during license key activation |
     | licenseKeyActivationsLimit | integer | ❌ | The number of times the license key can be activated. Must be 0 or greater |
     | licenseKeyDuration | model | ❌ |  |

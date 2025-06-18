@@ -7,6 +7,7 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | paymentId | string | ✅ | The unique identifier of the payment to be refunded. |
+    | items | array | ❌ | Partially Refund an Individual Item |
     | reason | string | ❌ | The reason for the refund, if any. Maximum length is 3000 characters. Optional. |
 
 

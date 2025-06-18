@@ -9,6 +9,7 @@
     | addons | array | ✅ | Addons associated with this subscription |
     | customer | model | ✅ |  |
     | metadata | dictionary | ✅ |  |
+    | paymentId | string | ✅ | First payment id for the subscription |
     | recurringPreTaxAmount | integer | ✅ | Tax will be added to the amount and charged to the customer on each billing cycle |
     | subscriptionId | string | ✅ | Unique identifier for the subscription |
     | clientSecret | string | ❌ | Client secret used to load Dodo checkout SDK NOTE : Dodo checkout SDK will be coming soon |

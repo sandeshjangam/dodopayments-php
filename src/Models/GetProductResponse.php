@@ -15,6 +15,9 @@ class GetProductResponse
     #[SerializedName('addons')]
     public ?array $addons;
 
+    #[SerializedName('brand_id')]
+    public string $brandId;
+
     /**
      * Unique identifier for the business to which the product belongs.
      */
@@ -32,6 +35,9 @@ class GetProductResponse
      */
     #[SerializedName('description')]
     public ?string $description;
+
+    #[SerializedName('digital_product_delivery')]
+    public ?DigitalProductDelivery $digitalProductDelivery;
 
     /**
      * URL of the product image, optional.
@@ -95,9 +101,11 @@ class GetProductResponse
 
     public function __construct(
         ?array $addons = [],
+        string $brandId,
         string $businessId,
         string $createdAt,
         ?string $description = null,
+        ?DigitalProductDelivery $digitalProductDelivery = null,
         ?string $image = null,
         bool $isRecurring,
         ?string $licenseKeyActivationMessage = null,
@@ -111,9 +119,11 @@ class GetProductResponse
         string $updatedAt
     ) {
         $this->addons = $addons;
+        $this->brandId = $brandId;
         $this->businessId = $businessId;
         $this->createdAt = $createdAt;
         $this->description = $description;
+        $this->digitalProductDelivery = $digitalProductDelivery;
         $this->image = $image;
         $this->isRecurring = $isRecurring;
         $this->licenseKeyActivationMessage = $licenseKeyActivationMessage;

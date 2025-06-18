@@ -7,6 +7,7 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | productPrice | integer | ✅ | The product price. Represented in the lowest denomination of the currency (e.g., cents for USD). For example, to charge $1.00, pass `100`. |
+    | metadata | dictionary | ❌ |  |
 
 
 

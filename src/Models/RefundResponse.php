@@ -30,6 +30,12 @@ class RefundResponse
     public ?Currency $currency;
 
     /**
+     * If true the refund is a partial refund
+     */
+    #[SerializedName('is_partial')]
+    public bool $isPartial;
+
+    /**
      * The unique identifier of the payment associated with the refund.
      */
     #[SerializedName('payment_id')]
@@ -55,6 +61,7 @@ class RefundResponse
         string $businessId,
         string $createdAt,
         ?Currency $currency = null,
+        bool $isPartial,
         string $paymentId,
         ?string $reason = null,
         string $refundId,
@@ -64,6 +71,7 @@ class RefundResponse
         $this->businessId = $businessId;
         $this->createdAt = $createdAt;
         $this->currency = $currency;
+        $this->isPartial = $isPartial;
         $this->paymentId = $paymentId;
         $this->reason = $reason;
         $this->refundId = $refundId;

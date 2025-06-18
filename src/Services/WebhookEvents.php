@@ -15,7 +15,8 @@ class WebhookEvents extends BaseService
         int $limit = null,
         string $objectId = null,
         int $pageSize = null,
-        int $pageNumber = null
+        int $pageNumber = null,
+        string $webhookId = null
     ): Models\ListWebhookEventsResponse {
         $data = $this->sendRequest('get', '/webhook_events', [
             'query' => [
@@ -25,6 +26,7 @@ class WebhookEvents extends BaseService
                 'object_id' => $objectId,
                 'page_size' => $pageSize,
                 'page_number' => $pageNumber,
+                'webhook_id' => $webhookId,
             ],
         ]);
 

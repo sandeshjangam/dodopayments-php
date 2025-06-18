@@ -10,10 +10,11 @@ $status = Models\SubscriptionStatus::Pending;
 $response = $sdk->subscriptions->listSubscriptionsHandler(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 5,
-  pageNumber: 123,
+  pageSize: 1,
+  pageNumber: 8,
   customerId: "customer_id",
-  status: $status
+  status: $status,
+  brandId: "brand_id"
 );
 
 print_r($response);

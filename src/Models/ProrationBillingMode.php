@@ -9,4 +9,5 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 enum ProrationBillingMode: string
 {
     case ProratedImmediately = 'prorated_immediately';
+    case FullImmediately = 'full_immediately';
 }

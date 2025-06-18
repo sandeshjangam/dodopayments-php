@@ -6,9 +6,11 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
+    | brandId | string | ✅ |  |
     | createdAt | string | ✅ |  |
     | currency | model | ✅ |  |
     | customer | model | ✅ |  |
+    | digitalProductsDelivered | boolean | ✅ |  |
     | metadata | dictionary | ✅ |  |
     | paymentId | string | ✅ |  |
     | totalAmount | integer | ✅ |  |

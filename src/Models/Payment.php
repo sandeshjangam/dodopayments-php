@@ -12,6 +12,12 @@ class Payment
     public BillingAddress $billing;
 
     /**
+     * brand id this payment belongs to
+     */
+    #[SerializedName('brand_id')]
+    public string $brandId;
+
+    /**
      * Identifier of the business associated with the payment
      */
     #[SerializedName('business_id')]
@@ -54,6 +60,12 @@ class Payment
     public CustomerLimitedDetailsResponse $customer;
 
     /**
+     * brand id this payment belongs to
+     */
+    #[SerializedName('digital_products_delivered')]
+    public bool $digitalProductsDelivered;
+
+    /**
      * The discount id if discount is applied
      */
     #[SerializedName('discount_id')]
@@ -65,6 +77,12 @@ class Payment
      */
     #[SerializedName('disputes')]
     public array $disputes;
+
+    /**
+     * An error code if the payment failed
+     */
+    #[SerializedName('error_code')]
+    public ?string $errorCode;
 
     /**
      * An error message if the payment failed
@@ -163,6 +181,7 @@ in your Dodo balance.
 
     public function __construct(
         BillingAddress $billing,
+        string $brandId,
         string $businessId,
         ?CountryCodeAlpha2 $cardIssuingCountry = null,
         ?string $cardLastFour = null,
@@ -171,8 +190,10 @@ in your Dodo balance.
         string $createdAt,
         Currency $currency,
         CustomerLimitedDetailsResponse $customer,
+        bool $digitalProductsDelivered,
         ?string $discountId = null,
         array $disputes,
+        ?string $errorCode = null,
         ?string $errorMessage = null,
         array $metadata,
         string $paymentId,
@@ -192,6 +213,7 @@ in your Dodo balance.
         PaymentPayloadType $payloadType
     ) {
         $this->billing = $billing;
+        $this->brandId = $brandId;
         $this->businessId = $businessId;
         $this->cardIssuingCountry = $cardIssuingCountry;
         $this->cardLastFour = $cardLastFour;
@@ -200,8 +222,10 @@ in your Dodo balance.
         $this->createdAt = $createdAt;
         $this->currency = $currency;
         $this->customer = $customer;
+        $this->digitalProductsDelivered = $digitalProductsDelivered;
         $this->discountId = $discountId;
         $this->disputes = $disputes;
+        $this->errorCode = $errorCode;
         $this->errorMessage = $errorMessage;
         $this->metadata = $metadata;
         $this->paymentId = $paymentId;

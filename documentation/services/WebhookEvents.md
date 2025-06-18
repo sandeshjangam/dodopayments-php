@@ -23,6 +23,7 @@ A list of all methods in the `WebhookEvents` service. Click on the method name t
 | $objectId | string | ❌ | Get events history of a specific object like payment/subscription/refund/dispute |
 | $pageSize | int | ❌ | Page size default is 10 max is 100 |
 | $pageNumber | int | ❌ | Page number default is 0 |
+| $webhookId | string | ❌ | Filter by webhook destination |
 
 **Return Type**
 
@@ -39,10 +40,11 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 $response = $sdk->webhookEvents->listWebhookEvents(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  limit: 6,
+  limit: 3,
   objectId: "object_id",
-  pageSize: 3,
-  pageNumber: 8
+  pageSize: 10,
+  pageNumber: 8,
+  webhookId: "webhook_id"
 );
 
 print_r($response);

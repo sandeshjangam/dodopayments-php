@@ -12,6 +12,7 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $input = new Models\PatchSubscriptionRequest(
   billing: $billingAddress,
+  cancelAtNextBillingDate: true,
   disableOnDemand: $disableOnDemandReq,
   metadata: [],
   status: $subscriptionStatus,

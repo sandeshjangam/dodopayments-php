@@ -31,5 +31,6 @@ enum EventType: string
     case SubscriptionCancelled = 'subscription.cancelled';
     case SubscriptionFailed = 'subscription.failed';
     case SubscriptionExpired = 'subscription.expired';
+    case SubscriptionPlanChanged = 'subscription.plan_changed';
     case LicenseKeyCreated = 'license_key.created';
 }

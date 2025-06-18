@@ -8,6 +8,7 @@ Response struct representing subscription details
 | :-------- | :----------| :----------| :----------|
     | addons | array | ✅ | Addons associated with this subscription |
     | billing | model | ✅ |  |
+    | cancelAtNextBillingDate | boolean | ✅ | Indicates if the subscription will cancel at the next billing date |
     | createdAt | string | ✅ | Timestamp when the subscription was created |
     | currency | model | ✅ |  |
     | customer | model | ✅ |  |

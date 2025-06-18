@@ -35,11 +35,11 @@ $input = new Models\CreateSubscriptionRequest(
   onDemand: $onDemandSubscriptionReq,
   paymentLink: true,
   productId: "product_id",
-  quantity: 9,
+  quantity: 4,
   returnUrl: "return_url",
   showSavedPaymentMethods: true,
   taxId: "tax_id",
-  trialPeriodDays: 6
+  trialPeriodDays: 4
 );
 
 $response = $sdk->subscriptions->createSubscriptionHandler(

@@ -8,6 +8,9 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 
 class GetPaymentsListResponseItem
 {
+    #[SerializedName('brand_id')]
+    public string $brandId;
+
     #[SerializedName('created_at')]
     public string $createdAt;
 
@@ -16,6 +19,9 @@ class GetPaymentsListResponseItem
 
     #[SerializedName('customer')]
     public CustomerLimitedDetailsResponse $customer;
+
+    #[SerializedName('digital_products_delivered')]
+    public bool $digitalProductsDelivered;
 
     #[SerializedName('metadata')]
     public array $metadata;
@@ -39,9 +45,11 @@ class GetPaymentsListResponseItem
     public int $totalAmount;
 
     public function __construct(
+        string $brandId,
         string $createdAt,
         Currency $currency,
         CustomerLimitedDetailsResponse $customer,
+        bool $digitalProductsDelivered,
         array $metadata,
         string $paymentId,
         ?string $paymentMethod = null,
@@ -50,9 +58,11 @@ class GetPaymentsListResponseItem
         ?string $subscriptionId = null,
         int $totalAmount
     ) {
+        $this->brandId = $brandId;
         $this->createdAt = $createdAt;
         $this->currency = $currency;
         $this->customer = $customer;
+        $this->digitalProductsDelivered = $digitalProductsDelivered;
         $this->metadata = $metadata;
         $this->paymentId = $paymentId;
         $this->paymentMethod = $paymentMethod;

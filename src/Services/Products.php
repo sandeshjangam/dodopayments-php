@@ -13,7 +13,8 @@ class Products extends BaseService
         int $pageSize = null,
         int $pageNumber = null,
         bool $archived = null,
-        bool $recurring = null
+        bool $recurring = null,
+        string $brandId = null
     ): Models\GetProductsListResponse {
         $data = $this->sendRequest('get', '/products', [
             'query' => [
@@ -21,6 +22,7 @@ class Products extends BaseService
                 'page_number' => $pageNumber,
                 'archived' => $archived,
                 'recurring' => $recurring,
+                'brand_id' => $brandId,
             ],
         ]);
 
@@ -53,6 +55,13 @@ class Products extends BaseService
         $data = $this->sendRequest('delete', "/products/{$id}", []);
 
         return json_decode($data, true);
+    }
+
+    public function uploadProductFile(Models\UploadProductFile $input, string $id): Models\UploadProductFileResponse
+    {
+        $data = $this->sendRequest('put', "/products/{$id}/files", ['json' => Serializer::serialize($input)]);
+
+        return Serializer::deserialize($data, Models\UploadProductFileResponse::class);
     }
 
     public function updateProductImage(string $id, bool $forceUpdate = null): Models\UpdateProductImageResponse

@@ -2,6 +2,7 @@
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\PatchDigitalProductDeliveryRequest;
 use Dodopayments\Models\LicenseKeyDuration;
 use Dodopayments\Models\Price;
 use Dodopayments\Models\TaxCategory;
@@ -12,10 +13,12 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $input = new Models\PatchProductRequest(
   addons: [],
+  brandId: "brand_id",
   description: "description",
+  digitalProductDelivery: $patchDigitalProductDeliveryRequest,
   imageId: "image_id",
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 4,
+  licenseKeyActivationsLimit: 9,
   licenseKeyDuration: $licenseKeyDuration,
   licenseKeyEnabled: true,
   name: "name",

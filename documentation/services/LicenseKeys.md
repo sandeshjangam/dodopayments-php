@@ -38,8 +38,8 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->licenseKeys->listLicenseKeyInstances(
-  pageSize: 6,
-  pageNumber: 4,
+  pageSize: 9,
+  pageNumber: 9,
   licenseKeyId: "license_key_id"
 );
 
@@ -147,8 +147,8 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 $status = Models\LicenseKeyStatus::Active;
 
 $response = $sdk->licenseKeys->listLicenseKeysHandler(
-  pageSize: 9,
-  pageNumber: 9,
+  pageSize: 10,
+  pageNumber: 123,
   customerId: "customer_id",
   status: $status,
   productId: "product_id"
@@ -216,7 +216,7 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\PatchLicenseKeyRequest(
-  activationsLimit: 123,
+  activationsLimit: 10,
   disabled: true,
   expiresAt: "expires_at"
 );

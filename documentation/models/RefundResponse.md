@@ -8,6 +8,7 @@
 | :-------- | :----------| :----------| :----------|
     | businessId | string | ✅ | The unique identifier of the business issuing the refund. |
     | createdAt | string | ✅ | The timestamp of when the refund was created in UTC. |
+    | isPartial | boolean | ✅ | If true the refund is a partial refund |
     | paymentId | string | ✅ | The unique identifier of the payment associated with the refund. |
     | refundId | string | ✅ | The unique identifier of the refund. |
     | status | model | ✅ |  |

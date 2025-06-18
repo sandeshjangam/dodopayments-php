@@ -42,8 +42,8 @@ $status = Models\RefundStatus::Succeeded;
 $response = $sdk->refunds->listRefunds(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 2,
-  pageNumber: 5,
+  pageSize: 8,
+  pageNumber: 9,
   status: $status,
   customerId: "customer_id"
 );
@@ -72,12 +72,14 @@ print_r($response);
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\PartialRefundItem;
 use Dodopayments\Models\CreateRefundRequest;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\CreateRefundRequest(
+  items: [],
   paymentId: "payment_id",
   reason: "reason"
 );

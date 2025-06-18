@@ -15,6 +15,12 @@ class SubscriptionListResponseItem
     public BillingAddress $billing;
 
     /**
+     * Indicates if the subscription will cancel at the next billing date
+     */
+    #[SerializedName('cancel_at_next_billing_date')]
+    public bool $cancelAtNextBillingDate;
+
+    /**
      * Cancelled timestamp if the subscription is cancelled
      */
     #[SerializedName('cancelled_at')]
@@ -118,6 +124,7 @@ class SubscriptionListResponseItem
 
     public function __construct(
         BillingAddress $billing,
+        bool $cancelAtNextBillingDate,
         ?string $cancelledAt = null,
         string $createdAt,
         Currency $currency,
@@ -140,6 +147,7 @@ class SubscriptionListResponseItem
         int $trialPeriodDays
     ) {
         $this->billing = $billing;
+        $this->cancelAtNextBillingDate = $cancelAtNextBillingDate;
         $this->cancelledAt = $cancelledAt;
         $this->createdAt = $createdAt;
         $this->currency = $currency;

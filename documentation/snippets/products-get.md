@@ -6,10 +6,11 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->products->listProductsHandler(
-  pageSize: 123,
-  pageNumber: 8,
+  pageSize: 9,
+  pageNumber: 7,
   archived: true,
-  recurring: true
+  recurring: true,
+  brandId: "brand_id"
 );
 
 print_r($response);

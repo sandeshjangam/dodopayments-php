@@ -9,6 +9,7 @@ A list of all methods in the `Products` service. Click on the method name to vie
 |[get_product_handler](#get_product_handler)|  |
 |[patch_product](#patch_product)|  |
 |[delete_product](#delete_product)|  |
+|[upload_product_file](#upload_product_file)|  |
 |[update_product_image](#update_product_image)|  |
 |[undelete_product](#undelete_product)|  |
 
@@ -26,6 +27,7 @@ A list of all methods in the `Products` service. Click on the method name to vie
 | $pageNumber | int | ❌ | Page number default is 0 |
 | $archived | bool | ❌ | List archived products |
 | $recurring | bool | ❌ | Filter products by pricing type: - `true`: Show only recurring pricing products (e.g. subscriptions) - `false`: Show only one-time price products - `null` or absent: Show both types of products |
+| $brandId | string | ❌ | filter by Brand id |
 
 **Return Type**
 
@@ -40,10 +42,11 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->products->listProductsHandler(
-  pageSize: 123,
-  pageNumber: 8,
+  pageSize: 9,
+  pageNumber: 7,
   archived: true,
-  recurring: true
+  recurring: true,
+  brandId: "brand_id"
 );
 
 print_r($response);
@@ -70,6 +73,7 @@ print_r($response);
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\CreateDigitalProductDeliveryRequest;
 use Dodopayments\Models\LicenseKeyDuration;
 use Dodopayments\Models\Price;
 use Dodopayments\Models\TaxCategory;
@@ -83,9 +87,11 @@ $taxCategory = Models\TaxCategory::DigitalProducts;
 
 $input = new Models\CreateProductRequest(
   addons: [],
+  brandId: "brand_id",
   description: "description",
+  digitalProductDelivery: $createDigitalProductDeliveryRequest,
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 7,
+  licenseKeyActivationsLimit: 9,
   licenseKeyDuration: $licenseKeyDuration,
   licenseKeyEnabled: true,
   name: "name",
@@ -153,6 +159,7 @@ print_r($response);
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\PatchDigitalProductDeliveryRequest;
 use Dodopayments\Models\LicenseKeyDuration;
 use Dodopayments\Models\Price;
 use Dodopayments\Models\TaxCategory;
@@ -163,10 +170,12 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $input = new Models\PatchProductRequest(
   addons: [],
+  brandId: "brand_id",
   description: "description",
+  digitalProductDelivery: $patchDigitalProductDeliveryRequest,
   imageId: "image_id",
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 4,
+  licenseKeyActivationsLimit: 9,
   licenseKeyDuration: $licenseKeyDuration,
   licenseKeyEnabled: true,
   name: "name",
@@ -207,6 +216,45 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->products->deleteProduct(
+  id: "id"
+);
+
+print_r($response);
+```
+
+## upload_product_file
+
+
+- HTTP Method: `PUT`
+- Endpoint: `/products/{id}/files`
+
+**Parameters**
+
+| Name    | Type| Required | Description |
+| :-------- | :----------| :----------| :----------|
+| input | Models\UploadProductFile | ✅ |  |
+| $id | string | ✅ | Product Id |
+
+**Return Type**
+
+`Models\UploadProductFileResponse`
+
+**Example Usage Code Snippet**
+```php
+<?php
+
+use Dodopayments\Client;
+use Dodopayments\Models\UploadProductFile;
+
+$sdk = new Client(accessToken: 'YOUR_TOKEN');
+
+
+$input = new Models\UploadProductFile(
+  fileName: "file_name"
+);
+
+$response = $sdk->products->uploadProductFile(
+  input: $input,
   id: "id"
 );
 

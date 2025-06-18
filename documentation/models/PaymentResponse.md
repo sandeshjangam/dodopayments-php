@@ -7,10 +7,12 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | billing | model | ✅ |  |
+    | brandId | string | ✅ | brand id this payment belongs to |
     | businessId | string | ✅ | Identifier of the business associated with the payment |
     | createdAt | string | ✅ | Timestamp when the payment was created |
     | currency | model | ✅ |  |
     | customer | model | ✅ |  |
+    | digitalProductsDelivered | boolean | ✅ | brand id this payment belongs to |
     | disputes | array | ✅ | List of disputes associated with this payment |
     | metadata | dictionary | ✅ |  |
     | paymentId | string | ✅ | Unique identifier for the payment |
@@ -23,6 +25,7 @@
     | cardNetwork | string | ❌ | Card network like VISA, MASTERCARD etc. |
     | cardType | string | ❌ | The type of card DEBIT or CREDIT |
     | discountId | string | ❌ | The discount id if discount is applied |
+    | errorCode | string | ❌ | An error code if the payment failed |
     | errorMessage | string | ❌ | An error message if the payment failed |
     | paymentLink | string | ❌ | Checkout URL |
     | paymentMethod | string | ❌ | Payment method used by customer (e.g. "card", "bank_transfer") |

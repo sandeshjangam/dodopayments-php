@@ -35,6 +35,12 @@ NOTE : Dodo checkout SDK will be coming soon
     public array $metadata;
 
     /**
+     * First payment id for the subscription
+     */
+    #[SerializedName('payment_id')]
+    public string $paymentId;
+
+    /**
      * URL to checkout page
      */
     #[SerializedName('payment_link')]
@@ -58,6 +64,7 @@ NOTE : Dodo checkout SDK will be coming soon
         CustomerLimitedDetailsResponse $customer,
         ?string $discountId = null,
         array $metadata,
+        string $paymentId,
         ?string $paymentLink = null,
         int $recurringPreTaxAmount,
         string $subscriptionId
@@ -67,6 +74,7 @@ NOTE : Dodo checkout SDK will be coming soon
         $this->customer = $customer;
         $this->discountId = $discountId;
         $this->metadata = $metadata;
+        $this->paymentId = $paymentId;
         $this->paymentLink = $paymentLink;
         $this->recurringPreTaxAmount = $recurringPreTaxAmount;
         $this->subscriptionId = $subscriptionId;

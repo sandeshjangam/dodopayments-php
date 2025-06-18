@@ -44,7 +44,7 @@ $response = $sdk->disputes->listDisputes(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
   pageSize: 9,
-  pageNumber: 5,
+  pageNumber: 9,
   disputeStatus: $disputeStatus,
   disputeStage: $disputeStage,
   customerId: "customer_id"

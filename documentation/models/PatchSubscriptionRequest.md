@@ -7,6 +7,7 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | billing | model | ❌ |  |
+    | cancelAtNextBillingDate | boolean | ❌ |  |
     | disableOnDemand | model | ❌ |  |
     | metadata | dictionary | ❌ |  |
     | status | model | ❌ |  |

@@ -2,6 +2,7 @@
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\CreateDigitalProductDeliveryRequest;
 use Dodopayments\Models\LicenseKeyDuration;
 use Dodopayments\Models\Price;
 use Dodopayments\Models\TaxCategory;
@@ -15,9 +16,11 @@ $taxCategory = Models\TaxCategory::DigitalProducts;
 
 $input = new Models\CreateProductRequest(
   addons: [],
+  brandId: "brand_id",
   description: "description",
+  digitalProductDelivery: $createDigitalProductDeliveryRequest,
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 7,
+  licenseKeyActivationsLimit: 9,
   licenseKeyDuration: $licenseKeyDuration,
   licenseKeyEnabled: true,
   name: "name",
