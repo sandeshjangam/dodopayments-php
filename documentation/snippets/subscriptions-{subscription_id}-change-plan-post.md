@@ -14,7 +14,7 @@ $input = new Models\UpdateSubscriptionPlanReq(
   addons: [],
   productId: "product_id",
   prorationBillingMode: $prorationBillingMode,
-  quantity: 6
+  quantity: 3
 );
 
 $response = $sdk->subscriptions->updateSubscriptionPlanHandler(

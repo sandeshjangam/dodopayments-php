@@ -6,8 +6,9 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->customers->listCustomers(
-  pageSize: 7,
-  pageNumber: 1
+  pageSize: 10,
+  pageNumber: 123,
+  email: "email"
 );
 
 print_r($response);

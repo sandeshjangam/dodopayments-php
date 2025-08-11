@@ -5,11 +5,11 @@ use Dodopayments\Client;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
-$status = Models\LicenseKeyStatus::Active;
+$status = Models\ListLicenseKeysHandlerStatus::Active;
 
 $response = $sdk->licenseKeys->listLicenseKeysHandler(
-  pageSize: 10,
-  pageNumber: 123,
+  pageSize: 7,
+  pageNumber: 1,
   customerId: "customer_id",
   status: $status,
   productId: "product_id"

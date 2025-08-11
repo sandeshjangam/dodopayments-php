@@ -8,8 +8,25 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 
 class CreateSubscriptionChargeRequest
 {
+    /**
+	 * Whether adaptive currency fees should be included in the product_price (true) or added on top (false).
+This field is ignored if adaptive pricing is not enabled for the business.
+	 */
+    #[SerializedName('adaptive_currency_fees_inclusive')]
+    public ?bool $adaptiveCurrencyFeesInclusive;
+
     #[SerializedName('metadata')]
-    public ?array $metadata;
+    public ?CreateSubscriptionChargeRequestMetadata $metadata;
+
+    #[SerializedName('product_currency')]
+    public ?CreateSubscriptionChargeRequestProductCurrency $productCurrency;
+
+    /**
+	 * Optional product description override for billing and line items.
+If not specified, the stored description of the product will be used.
+	 */
+    #[SerializedName('product_description')]
+    public ?string $productDescription;
 
     /**
 	 * The product price. Represented in the lowest denomination of the currency (e.g., cents for USD).
@@ -18,9 +35,17 @@ For example, to charge $1.00, pass `100`.
     #[SerializedName('product_price')]
     public int $productPrice;
 
-    public function __construct(?array $metadata = [], int $productPrice)
-    {
+    public function __construct(
+        ?bool $adaptiveCurrencyFeesInclusive = null,
+        ?CreateSubscriptionChargeRequestMetadata $metadata = null,
+        ?CreateSubscriptionChargeRequestProductCurrency $productCurrency = null,
+        ?string $productDescription = null,
+        int $productPrice
+    ) {
+        $this->adaptiveCurrencyFeesInclusive = $adaptiveCurrencyFeesInclusive;
         $this->metadata = $metadata;
+        $this->productCurrency = $productCurrency;
+        $this->productDescription = $productDescription;
         $this->productPrice = $productPrice;
     }
 }

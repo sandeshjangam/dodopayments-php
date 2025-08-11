@@ -27,7 +27,7 @@ class RefundResponse
     public string $createdAt;
 
     #[SerializedName('currency')]
-    public ?Currency $currency;
+    public ?RefundResponseCurrency $currency;
 
     /**
      * If true the refund is a partial refund
@@ -60,7 +60,7 @@ class RefundResponse
         ?int $amount = null,
         string $businessId,
         string $createdAt,
-        ?Currency $currency = null,
+        ?RefundResponseCurrency $currency = null,
         bool $isPartial,
         string $paymentId,
         ?string $reason = null,

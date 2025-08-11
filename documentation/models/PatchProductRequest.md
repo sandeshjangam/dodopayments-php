@@ -15,9 +15,40 @@
     | licenseKeyActivationsLimit | integer | ❌ | Limit for the number of activations for the license key. Only applicable if `license_key_enabled` is `true`. Represents the maximum number of times the license key can be activated. |
     | licenseKeyDuration | model | ❌ |  |
     | licenseKeyEnabled | boolean | ❌ | Whether the product requires a license key. If `true`, additional fields related to license key (duration, activations limit, activation message) become applicable. |
+    | metadata | model | ❌ |  |
     | name | string | ❌ | Name of the product, optional and must be at most 100 characters. |
     | price | model | ❌ |  |
-    | taxCategory | model | ❌ | Represents the different categories of taxation applicable to various products and services. |
+    | taxCategory | model | ❌ |  |
+
+# PatchProductRequestDigitalProductDelivery
+
+
+
+
+
+# PatchProductRequestLicenseKeyDuration
+
+
+
+
+
+# PatchProductRequestMetadata
+
+
+
+
+
+# PatchProductRequestPrice
+
+
+
+
+
+# PatchProductRequestTaxCategory
+
+
+
+
 
 
 

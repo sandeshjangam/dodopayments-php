@@ -12,6 +12,7 @@ class Client
 {
     public $addons;
     public $brands;
+    public $checkoutSessions;
     public $checkout;
     public $customers;
     public $discounts;
@@ -19,12 +20,13 @@ class Client
     public $invoices;
     public $licenseKeys;
     public $licenses;
+    public $meters;
     public $payments;
     public $payouts;
     public $products;
     public $refunds;
     public $subscriptions;
-    public $webhookEvents;
+    public $webhooks;
     public $outgoingWebhooks;
 
     public function __construct(
@@ -35,6 +37,7 @@ class Client
     ) {
         $this->addons = new Services\Addons($accessToken, $tokenPrefix, $environment, $timeout);
         $this->brands = new Services\Brands($accessToken, $tokenPrefix, $environment, $timeout);
+        $this->checkoutSessions = new Services\CheckoutSessions($accessToken, $tokenPrefix, $environment, $timeout);
         $this->checkout = new Services\Checkout($accessToken, $tokenPrefix, $environment, $timeout);
         $this->customers = new Services\Customers($accessToken, $tokenPrefix, $environment, $timeout);
         $this->discounts = new Services\Discounts($accessToken, $tokenPrefix, $environment, $timeout);
@@ -42,12 +45,13 @@ class Client
         $this->invoices = new Services\Invoices($accessToken, $tokenPrefix, $environment, $timeout);
         $this->licenseKeys = new Services\LicenseKeys($accessToken, $tokenPrefix, $environment, $timeout);
         $this->licenses = new Services\Licenses($accessToken, $tokenPrefix, $environment, $timeout);
+        $this->meters = new Services\Meters($accessToken, $tokenPrefix, $environment, $timeout);
         $this->payments = new Services\Payments($accessToken, $tokenPrefix, $environment, $timeout);
         $this->payouts = new Services\Payouts($accessToken, $tokenPrefix, $environment, $timeout);
         $this->products = new Services\Products($accessToken, $tokenPrefix, $environment, $timeout);
         $this->refunds = new Services\Refunds($accessToken, $tokenPrefix, $environment, $timeout);
         $this->subscriptions = new Services\Subscriptions($accessToken, $tokenPrefix, $environment, $timeout);
-        $this->webhookEvents = new Services\WebhookEvents($accessToken, $tokenPrefix, $environment, $timeout);
+        $this->webhooks = new Services\Webhooks($accessToken, $tokenPrefix, $environment, $timeout);
         $this->outgoingWebhooks = new Services\OutgoingWebhooks($accessToken, $tokenPrefix, $environment, $timeout);
     }
 
@@ -55,6 +59,7 @@ class Client
     {
         $this->addons->setBaseUrl($url);
         $this->brands->setBaseUrl($url);
+        $this->checkoutSessions->setBaseUrl($url);
         $this->checkout->setBaseUrl($url);
         $this->customers->setBaseUrl($url);
         $this->discounts->setBaseUrl($url);
@@ -62,12 +67,13 @@ class Client
         $this->invoices->setBaseUrl($url);
         $this->licenseKeys->setBaseUrl($url);
         $this->licenses->setBaseUrl($url);
+        $this->meters->setBaseUrl($url);
         $this->payments->setBaseUrl($url);
         $this->payouts->setBaseUrl($url);
         $this->products->setBaseUrl($url);
         $this->refunds->setBaseUrl($url);
         $this->subscriptions->setBaseUrl($url);
-        $this->webhookEvents->setBaseUrl($url);
+        $this->webhooks->setBaseUrl($url);
         $this->outgoingWebhooks->setBaseUrl($url);
     }
 
@@ -75,6 +81,7 @@ class Client
     {
         $this->addons->setAccessToken($accessToken);
         $this->brands->setAccessToken($accessToken);
+        $this->checkoutSessions->setAccessToken($accessToken);
         $this->checkout->setAccessToken($accessToken);
         $this->customers->setAccessToken($accessToken);
         $this->discounts->setAccessToken($accessToken);
@@ -82,12 +89,13 @@ class Client
         $this->invoices->setAccessToken($accessToken);
         $this->licenseKeys->setAccessToken($accessToken);
         $this->licenses->setAccessToken($accessToken);
+        $this->meters->setAccessToken($accessToken);
         $this->payments->setAccessToken($accessToken);
         $this->payouts->setAccessToken($accessToken);
         $this->products->setAccessToken($accessToken);
         $this->refunds->setAccessToken($accessToken);
         $this->subscriptions->setAccessToken($accessToken);
-        $this->webhookEvents->setAccessToken($accessToken);
+        $this->webhooks->setAccessToken($accessToken);
         $this->outgoingWebhooks->setAccessToken($accessToken);
     }
 }

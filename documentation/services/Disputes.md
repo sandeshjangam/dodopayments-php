@@ -21,8 +21,8 @@ A list of all methods in the `Disputes` service. Click on the method name to vie
 | $createdAtLte | string | ❌ | Get events created before this time |
 | $pageSize | int | ❌ | Page size default is 10 max is 100 |
 | $pageNumber | int | ❌ | Page number default is 0 |
-| $disputeStatus | Models\DisputeStatus | ❌ | Filter by dispute status |
-| $disputeStage | Models\DisputeStage | ❌ | Filter by dispute stage |
+| $disputeStatus | Models\ListDisputesDisputeStatus | ❌ | Filter by dispute status |
+| $disputeStage | Models\ListDisputesDisputeStage | ❌ | Filter by dispute stage |
 | $customerId | string | ❌ | Filter by customer_id |
 
 **Return Type**
@@ -37,14 +37,14 @@ use Dodopayments\Client;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
-$disputeStatus = Models\DisputeStatus::DisputeOpened;
-$disputeStage = Models\DisputeStage::PreDispute;
+$disputeStatus = Models\ListDisputesDisputeStatus::DisputeOpened;
+$disputeStage = Models\ListDisputesDisputeStage::PreDispute;
 
 $response = $sdk->disputes->listDisputes(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 9,
-  pageNumber: 9,
+  pageSize: 5,
+  pageNumber: 2,
   disputeStatus: $disputeStatus,
   disputeStage: $disputeStage,
   customerId: "customer_id"

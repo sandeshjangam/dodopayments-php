@@ -6,7 +6,7 @@
 
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
-    | amount | integer | ✅ | The discount amount. - If `discount_type` is `percentage`, this is in **basis points** (e.g., 540 =\> 5.4%). - Otherwise, this is **USD cents** (e.g., 100 =\> `$1.00`). |
+    | amount | integer | ✅ | The discount amount. - If `discount_type` is `percentage`, this is in **basis points**   (e.g., 540 =\> 5.4%). - Otherwise, this is **USD cents** (e.g., 100 =\> `$1.00`). |
     | businessId | string | ✅ | The business this discount belongs to. |
     | code | string | ✅ | The discount code (up to 16 chars). |
     | createdAt | string | ✅ | Timestamp when the discount is created |
@@ -16,6 +16,7 @@
     | type | model | ✅ |  |
     | expiresAt | string | ❌ | Optional date/time after which discount is expired. |
     | name | string | ❌ | Name for the Discount |
+    | subscriptionCycles | integer | ❌ | Number of subscription billing cycles this discount is valid for. If not provided, the discount will be applied indefinitely to all recurring payments related to the subscription. |
     | usageLimit | integer | ❌ | Usage limit for this discount, if any. |
 
 

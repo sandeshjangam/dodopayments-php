@@ -5,14 +5,14 @@ use Dodopayments\Client;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
-$disputeStatus = Models\DisputeStatus::DisputeOpened;
-$disputeStage = Models\DisputeStage::PreDispute;
+$disputeStatus = Models\ListDisputesDisputeStatus::DisputeOpened;
+$disputeStage = Models\ListDisputesDisputeStage::PreDispute;
 
 $response = $sdk->disputes->listDisputes(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 9,
-  pageNumber: 9,
+  pageSize: 5,
+  pageNumber: 2,
   disputeStatus: $disputeStatus,
   disputeStage: $disputeStage,
   customerId: "customer_id"

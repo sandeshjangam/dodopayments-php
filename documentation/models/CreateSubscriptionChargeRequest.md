@@ -7,7 +7,22 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | productPrice | integer | ✅ | The product price. Represented in the lowest denomination of the currency (e.g., cents for USD). For example, to charge $1.00, pass `100`. |
-    | metadata | dictionary | ❌ |  |
+    | adaptiveCurrencyFeesInclusive | boolean | ❌ | Whether adaptive currency fees should be included in the product_price (true) or added on top (false). This field is ignored if adaptive pricing is not enabled for the business. |
+    | metadata | model | ❌ |  |
+    | productCurrency | model | ❌ |  |
+    | productDescription | string | ❌ | Optional product description override for billing and line items. If not specified, the stored description of the product will be used. |
+
+# CreateSubscriptionChargeRequestMetadata
+
+
+
+
+
+# CreateSubscriptionChargeRequestProductCurrency
+
+
+
+
 
 
 

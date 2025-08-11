@@ -11,11 +11,11 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\PatchSubscriptionRequest(
-  billing: $billingAddress,
+  billing: $billing,
   cancelAtNextBillingDate: true,
-  disableOnDemand: $disableOnDemandReq,
-  metadata: [],
-  status: $subscriptionStatus,
+  disableOnDemand: $disableOnDemand,
+  metadata: $patchSubscriptionRequestMetadata,
+  status: $patchSubscriptionRequestStatus,
   taxId: "tax_id"
 );
 

@@ -150,12 +150,12 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\PatchAddonRequest(
-  currency: $currency,
+  currency: $patchAddonRequestCurrency,
   description: "description",
   imageId: "image_id",
   name: "name",
   price: 2,
-  taxCategory: $taxCategory
+  taxCategory: $patchAddonRequestTaxCategory
 );
 
 $response = $sdk->addons->patchAddon(

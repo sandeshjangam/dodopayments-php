@@ -28,7 +28,7 @@ class CreateProductRequest
     public ?string $description;
 
     #[SerializedName('digital_product_delivery')]
-    public ?CreateDigitalProductDeliveryRequest $digitalProductDelivery;
+    public ?CreateProductRequestDigitalProductDelivery $digitalProductDelivery;
 
     /**
      * Optional message displayed during license key activation
@@ -44,7 +44,7 @@ Must be 0 or greater
     public ?int $licenseKeyActivationsLimit;
 
     #[SerializedName('license_key_duration')]
-    public ?LicenseKeyDuration $licenseKeyDuration;
+    public ?CreateProductRequestLicenseKeyDuration $licenseKeyDuration;
 
     /**
 	 * When true, generates and sends a license key to your customer.
@@ -52,6 +52,9 @@ Defaults to false
 	 */
     #[SerializedName('license_key_enabled')]
     public ?bool $licenseKeyEnabled;
+
+    #[SerializedName('metadata')]
+    public ?array $metadata;
 
     /**
      * Optional name of the product
@@ -72,11 +75,12 @@ Defaults to false
         ?array $addons = [],
         ?string $brandId = null,
         ?string $description = null,
-        ?CreateDigitalProductDeliveryRequest $digitalProductDelivery = null,
+        ?CreateProductRequestDigitalProductDelivery $digitalProductDelivery = null,
         ?string $licenseKeyActivationMessage = null,
         ?int $licenseKeyActivationsLimit = null,
-        ?LicenseKeyDuration $licenseKeyDuration = null,
+        ?CreateProductRequestLicenseKeyDuration $licenseKeyDuration = null,
         ?bool $licenseKeyEnabled = null,
+        ?array $metadata = [],
         ?string $name = null,
         Price $price,
         TaxCategory $taxCategory
@@ -89,6 +93,7 @@ Defaults to false
         $this->licenseKeyActivationsLimit = $licenseKeyActivationsLimit;
         $this->licenseKeyDuration = $licenseKeyDuration;
         $this->licenseKeyEnabled = $licenseKeyEnabled;
+        $this->metadata = $metadata;
         $this->name = $name;
         $this->price = $price;
         $this->taxCategory = $taxCategory;

@@ -15,7 +15,7 @@ class Subscriptions extends BaseService
         int $pageSize = null,
         int $pageNumber = null,
         string $customerId = null,
-        Models\SubscriptionStatus $status = null,
+        Models\ListSubscriptionsHandlerStatus $status = null,
         string $brandId = null
     ): Models\GetSubscriptionsListResponse {
         $data = $this->sendRequest('get', '/subscriptions', [

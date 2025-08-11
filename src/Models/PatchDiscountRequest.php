@@ -43,8 +43,16 @@ To remove all restrictions, send empty array
     #[SerializedName('restricted_to')]
     public ?array $restrictedTo;
 
+    /**
+	 * Number of subscription billing cycles this discount is valid for.
+If not provided, the discount will be applied indefinitely to
+all recurring payments related to the subscription.
+	 */
+    #[SerializedName('subscription_cycles')]
+    public ?int $subscriptionCycles;
+
     #[SerializedName('type')]
-    public ?DiscountType $type;
+    public ?PatchDiscountRequestType $type;
 
     #[SerializedName('usage_limit')]
     public ?int $usageLimit;
@@ -55,7 +63,8 @@ To remove all restrictions, send empty array
         ?string $expiresAt = null,
         ?string $name = null,
         ?array $restrictedTo = [],
-        ?DiscountType $type = null,
+        ?int $subscriptionCycles = null,
+        ?PatchDiscountRequestType $type = null,
         ?int $usageLimit = null
     ) {
         $this->amount = $amount;
@@ -63,6 +72,7 @@ To remove all restrictions, send empty array
         $this->expiresAt = $expiresAt;
         $this->name = $name;
         $this->restrictedTo = $restrictedTo;
+        $this->subscriptionCycles = $subscriptionCycles;
         $this->type = $type;
         $this->usageLimit = $usageLimit;
     }

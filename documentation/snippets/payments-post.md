@@ -4,9 +4,9 @@
 use Dodopayments\Client;
 use Dodopayments\Models\PaymentMethodTypes;
 use Dodopayments\Models\BillingAddress;
-use Dodopayments\Models\Currency;
 use Dodopayments\Models\CustomerRequest;
 use Dodopayments\Models\OneTimeProductCartItemReq;
+use Dodopayments\Models\Currency;
 use Dodopayments\Models\CreateOneTimePaymentRequest;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
@@ -25,15 +25,15 @@ COMPLEX_MODEL_NOT_IMPLEMENTED
 
 
 $oneTimeProductCartItemReq = new Models\OneTimeProductCartItemReq(
-  amount: 10,
+  amount: 6,
   productId: "product_id",
-  quantity: 1
+  quantity: 4
 );
 
 $input = new Models\CreateOneTimePaymentRequest(
   allowedPaymentMethodTypes: [],
   billing: $billingAddress,
-  billingCurrency: $currency,
+  billingCurrency: $createOneTimePaymentRequestBillingCurrency,
   customer: $customerRequest,
   discountCode: "discount_code",
   metadata: [],

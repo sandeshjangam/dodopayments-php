@@ -22,6 +22,7 @@ A list of all methods in the `Customers` service. Click on the method name to vi
 | :-------- | :----------| :----------| :----------|
 | $pageSize | int | ❌ | Page size default is 10 max is 100 |
 | $pageNumber | int | ❌ | Page number default is 0 |
+| $email | string | ❌ | Filter by customer email |
 
 **Return Type**
 
@@ -36,8 +37,9 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->customers->listCustomers(
-  pageSize: 7,
-  pageNumber: 1
+  pageSize: 10,
+  pageNumber: 123,
+  email: "email"
 );
 
 print_r($response);

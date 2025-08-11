@@ -14,6 +14,7 @@
     | subscriptionId | string | ✅ | Unique identifier for the subscription |
     | clientSecret | string | ❌ | Client secret used to load Dodo checkout SDK NOTE : Dodo checkout SDK will be coming soon |
     | discountId | string | ❌ | The discount id if discount is applied |
+    | expiresOn | string | ❌ | Expiry timestamp of the payment link |
     | paymentLink | string | ❌ | URL to checkout page |
 
 

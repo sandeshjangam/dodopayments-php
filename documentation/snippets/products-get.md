@@ -7,7 +7,7 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->products->listProductsHandler(
   pageSize: 9,
-  pageNumber: 7,
+  pageNumber: 8,
   archived: true,
   recurring: true,
   brandId: "brand_id"

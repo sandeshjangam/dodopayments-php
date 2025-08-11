@@ -12,7 +12,7 @@ class DiscountResponse
 	 * The discount amount.
 
 - If `discount_type` is `percentage`, this is in ``basis points``
-(e.g., 540 => 5.4%).
+  (e.g., 540 => 5.4%).
 - Otherwise, this is ``USD cents`` (e.g., 100 => `$1.00`).
 	 */
     #[SerializedName('amount')]
@@ -62,6 +62,14 @@ class DiscountResponse
     public array $restrictedTo;
 
     /**
+	 * Number of subscription billing cycles this discount is valid for.
+If not provided, the discount will be applied indefinitely to
+all recurring payments related to the subscription.
+	 */
+    #[SerializedName('subscription_cycles')]
+    public ?int $subscriptionCycles;
+
+    /**
      * How many times this discount has been used.
      */
     #[SerializedName('times_used')]
@@ -85,6 +93,7 @@ class DiscountResponse
         ?string $expiresAt = null,
         ?string $name = null,
         array $restrictedTo,
+        ?int $subscriptionCycles = null,
         int $timesUsed,
         DiscountType $type,
         ?int $usageLimit = null
@@ -97,6 +106,7 @@ class DiscountResponse
         $this->expiresAt = $expiresAt;
         $this->name = $name;
         $this->restrictedTo = $restrictedTo;
+        $this->subscriptionCycles = $subscriptionCycles;
         $this->timesUsed = $timesUsed;
         $this->type = $type;
         $this->usageLimit = $usageLimit;

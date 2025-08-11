@@ -31,6 +31,12 @@ NOTE : Dodo checkout SDK will be coming soon
     #[SerializedName('discount_id')]
     public ?string $discountId;
 
+    /**
+     * Expiry timestamp of the payment link
+     */
+    #[SerializedName('expires_on')]
+    public ?string $expiresOn;
+
     #[SerializedName('metadata')]
     public array $metadata;
 
@@ -63,6 +69,7 @@ NOTE : Dodo checkout SDK will be coming soon
         ?string $clientSecret = null,
         CustomerLimitedDetailsResponse $customer,
         ?string $discountId = null,
+        ?string $expiresOn = null,
         array $metadata,
         string $paymentId,
         ?string $paymentLink = null,
@@ -73,6 +80,7 @@ NOTE : Dodo checkout SDK will be coming soon
         $this->clientSecret = $clientSecret;
         $this->customer = $customer;
         $this->discountId = $discountId;
+        $this->expiresOn = $expiresOn;
         $this->metadata = $metadata;
         $this->paymentId = $paymentId;
         $this->paymentLink = $paymentLink;

@@ -9,10 +9,27 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 class OnDemandSubscriptionReq
 {
     /**
+	 * Whether adaptive currency fees should be included in the product_price (true) or added on top (false).
+This field is ignored if adaptive pricing is not enabled for the business.
+	 */
+    #[SerializedName('adaptive_currency_fees_inclusive')]
+    public ?bool $adaptiveCurrencyFeesInclusive;
+
+    /**
      * If set as True, does not perform any charge and only authorizes payment method details for future use.
      */
     #[SerializedName('mandate_only')]
     public bool $mandateOnly;
+
+    #[SerializedName('product_currency')]
+    public ?OnDemandSubscriptionReqProductCurrency $productCurrency;
+
+    /**
+	 * Optional product description override for billing and line items.
+If not specified, the stored description of the product will be used.
+	 */
+    #[SerializedName('product_description')]
+    public ?string $productDescription;
 
     /**
 	 * Product price for the initial charge to customer
@@ -23,9 +40,17 @@ For example, to charge $1.00, pass `100`.
     #[SerializedName('product_price')]
     public ?int $productPrice;
 
-    public function __construct(bool $mandateOnly, ?int $productPrice = null)
-    {
+    public function __construct(
+        ?bool $adaptiveCurrencyFeesInclusive = null,
+        bool $mandateOnly,
+        ?OnDemandSubscriptionReqProductCurrency $productCurrency = null,
+        ?string $productDescription = null,
+        ?int $productPrice = null
+    ) {
+        $this->adaptiveCurrencyFeesInclusive = $adaptiveCurrencyFeesInclusive;
         $this->mandateOnly = $mandateOnly;
+        $this->productCurrency = $productCurrency;
+        $this->productDescription = $productDescription;
         $this->productPrice = $productPrice;
     }
 }

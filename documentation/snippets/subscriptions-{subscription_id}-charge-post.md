@@ -2,14 +2,18 @@
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\Currency;
 use Dodopayments\Models\CreateSubscriptionChargeRequest;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\CreateSubscriptionChargeRequest(
-  metadata: [],
-  productPrice: 6
+  adaptiveCurrencyFeesInclusive: true,
+  metadata: $createSubscriptionChargeRequestMetadata,
+  productCurrency: $createSubscriptionChargeRequestProductCurrency,
+  productDescription: "product_description",
+  productPrice: 3
 );
 
 $response = $sdk->subscriptions->createSubscriptionCharge(

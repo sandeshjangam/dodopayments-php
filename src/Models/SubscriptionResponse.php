@@ -46,6 +46,12 @@ class SubscriptionResponse
     public CustomerLimitedDetailsResponse $customer;
 
     /**
+     * Number of remaining discount cycles if discount is applied
+     */
+    #[SerializedName('discount_cycles_remaining')]
+    public ?int $discountCyclesRemaining;
+
+    /**
      * The discount id if discount is applied
      */
     #[SerializedName('discount_id')]
@@ -137,6 +143,7 @@ class SubscriptionResponse
         string $createdAt,
         Currency $currency,
         CustomerLimitedDetailsResponse $customer,
+        ?int $discountCyclesRemaining = null,
         ?string $discountId = null,
         array $metadata,
         string $nextBillingDate,
@@ -161,6 +168,7 @@ class SubscriptionResponse
         $this->createdAt = $createdAt;
         $this->currency = $currency;
         $this->customer = $customer;
+        $this->discountCyclesRemaining = $discountCyclesRemaining;
         $this->discountId = $discountId;
         $this->metadata = $metadata;
         $this->nextBillingDate = $nextBillingDate;

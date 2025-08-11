@@ -29,6 +29,7 @@
     | trialPeriodDays | integer | ✅ | Number of days in the trial period (0 if no trial) |
     | payloadType | model | ✅ |  |
     | cancelledAt | string | ❌ | Cancelled timestamp if the subscription is cancelled |
+    | discountCyclesRemaining | integer | ❌ | Number of remaining discount cycles if discount is applied |
     | discountId | string | ❌ | The discount id if discount is applied |
 
 # SubscriptionPayloadType

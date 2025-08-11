@@ -9,7 +9,6 @@
     | Pending | string |  | pending |
     | Active | string |  | active |
     | OnHold | string |  | on_hold |
-    | Paused | string |  | paused |
     | Cancelled | string |  | cancelled |
     | Failed | string |  | failed |
     | Expired | string |  | expired |

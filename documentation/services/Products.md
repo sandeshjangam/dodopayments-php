@@ -43,7 +43,7 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->products->listProductsHandler(
   pageSize: 9,
-  pageNumber: 7,
+  pageNumber: 8,
   archived: true,
   recurring: true,
   brandId: "brand_id"
@@ -73,10 +73,10 @@ print_r($response);
 <?php
 
 use Dodopayments\Client;
-use Dodopayments\Models\CreateDigitalProductDeliveryRequest;
-use Dodopayments\Models\LicenseKeyDuration;
 use Dodopayments\Models\Price;
 use Dodopayments\Models\TaxCategory;
+use Dodopayments\Models\CreateDigitalProductDeliveryRequest;
+use Dodopayments\Models\LicenseKeyDuration;
 use Dodopayments\Models\CreateProductRequest;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
@@ -89,11 +89,12 @@ $input = new Models\CreateProductRequest(
   addons: [],
   brandId: "brand_id",
   description: "description",
-  digitalProductDelivery: $createDigitalProductDeliveryRequest,
+  digitalProductDelivery: $createProductRequestDigitalProductDelivery,
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 9,
-  licenseKeyDuration: $licenseKeyDuration,
+  licenseKeyActivationsLimit: 5,
+  licenseKeyDuration: $createProductRequestLicenseKeyDuration,
   licenseKeyEnabled: true,
+  metadata: [],
   name: "name",
   price: $price,
   taxCategory: $taxCategory
@@ -172,15 +173,16 @@ $input = new Models\PatchProductRequest(
   addons: [],
   brandId: "brand_id",
   description: "description",
-  digitalProductDelivery: $patchDigitalProductDeliveryRequest,
+  digitalProductDelivery: $patchProductRequestDigitalProductDelivery,
   imageId: "image_id",
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 9,
-  licenseKeyDuration: $licenseKeyDuration,
+  licenseKeyActivationsLimit: 4,
+  licenseKeyDuration: $patchProductRequestLicenseKeyDuration,
   licenseKeyEnabled: true,
+  metadata: $patchProductRequestMetadata,
   name: "name",
-  price: $price,
-  taxCategory: $taxCategory
+  price: $patchProductRequestPrice,
+  taxCategory: $patchProductRequestTaxCategory
 );
 
 $response = $sdk->products->patchProduct(

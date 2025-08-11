@@ -5,8 +5,8 @@ use Dodopayments\Client;
 use Dodopayments\Models\AttachAddonReq;
 use Dodopayments\Models\PaymentMethodTypes;
 use Dodopayments\Models\BillingAddress;
-use Dodopayments\Models\Currency;
 use Dodopayments\Models\CustomerRequest;
+use Dodopayments\Models\Currency;
 use Dodopayments\Models\OnDemandSubscriptionReq;
 use Dodopayments\Models\CreateSubscriptionRequest;
 
@@ -28,14 +28,14 @@ $input = new Models\CreateSubscriptionRequest(
   addons: [],
   allowedPaymentMethodTypes: [],
   billing: $billingAddress,
-  billingCurrency: $currency,
+  billingCurrency: $createSubscriptionRequestBillingCurrency,
   customer: $customerRequest,
   discountCode: "discount_code",
   metadata: [],
-  onDemand: $onDemandSubscriptionReq,
+  onDemand: $createSubscriptionRequestOnDemand,
   paymentLink: true,
   productId: "product_id",
-  quantity: 4,
+  quantity: 5,
   returnUrl: "return_url",
   showSavedPaymentMethods: true,
   taxId: "tax_id",

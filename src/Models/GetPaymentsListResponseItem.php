@@ -36,7 +36,7 @@ class GetPaymentsListResponseItem
     public ?string $paymentMethodType;
 
     #[SerializedName('status')]
-    public ?IntentStatus $status;
+    public ?GetPaymentsListResponseItemStatus $status;
 
     #[SerializedName('subscription_id')]
     public ?string $subscriptionId;
@@ -54,7 +54,7 @@ class GetPaymentsListResponseItem
         string $paymentId,
         ?string $paymentMethod = null,
         ?string $paymentMethodType = null,
-        ?IntentStatus $status = null,
+        ?GetPaymentsListResponseItemStatus $status = null,
         ?string $subscriptionId = null,
         int $totalAmount
     ) {

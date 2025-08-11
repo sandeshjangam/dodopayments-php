@@ -8,6 +8,7 @@
 | :-------- | :----------| :----------| :----------|
     | ProratedImmediately | string |  | prorated_immediately |
     | FullImmediately | string |  | full_immediately |
+    | DifferenceImmediately | string |  | difference_immediately |
 
 
 

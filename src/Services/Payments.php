@@ -16,7 +16,7 @@ class Payments extends BaseService
         int $pageNumber = null,
         string $customerId = null,
         string $subscriptionId = null,
-        Models\IntentStatus $status = null,
+        Models\ListPaymentsHandlerStatus $status = null,
         string $brandId = null
     ): Models\GetPaymentsListResponse {
         $data = $this->sendRequest('get', '/payments', [

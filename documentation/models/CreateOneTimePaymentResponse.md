@@ -12,6 +12,7 @@
     | paymentId | string | ✅ | Unique identifier for the payment |
     | totalAmount | integer | ✅ | Total amount of the payment in smallest currency unit (e.g. cents) |
     | discountId | string | ❌ | The discount id if discount is applied |
+    | expiresOn | string | ❌ | Expiry timestamp of the payment link |
     | paymentLink | string | ❌ | Optional URL to a hosted payment page |
     | productCart | array | ❌ | Optional list of products included in the payment |
 

@@ -9,9 +9,33 @@
     | billing | model | ❌ |  |
     | cancelAtNextBillingDate | boolean | ❌ |  |
     | disableOnDemand | model | ❌ |  |
-    | metadata | dictionary | ❌ |  |
+    | metadata | model | ❌ |  |
     | status | model | ❌ |  |
     | taxId | string | ❌ |  |
+
+# Billing
+
+
+
+
+
+# DisableOnDemand
+
+
+
+
+
+# PatchSubscriptionRequestMetadata
+
+
+
+
+
+# PatchSubscriptionRequestStatus
+
+
+
+
 
 
 

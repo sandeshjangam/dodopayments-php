@@ -25,7 +25,7 @@ class PatchProductRequest
     public ?string $description;
 
     #[SerializedName('digital_product_delivery')]
-    public ?PatchDigitalProductDeliveryRequest $digitalProductDelivery;
+    public ?PatchProductRequestDigitalProductDelivery $digitalProductDelivery;
 
     /**
      * Product image id after its uploaded to S3
@@ -52,7 +52,7 @@ the license key can be activated.
     public ?int $licenseKeyActivationsLimit;
 
     #[SerializedName('license_key_duration')]
-    public ?LicenseKeyDuration $licenseKeyDuration;
+    public ?PatchProductRequestLicenseKeyDuration $licenseKeyDuration;
 
     /**
 	 * Whether the product requires a license key.
@@ -63,6 +63,9 @@ become applicable.
     #[SerializedName('license_key_enabled')]
     public ?bool $licenseKeyEnabled;
 
+    #[SerializedName('metadata')]
+    public ?PatchProductRequestMetadata $metadata;
+
     /**
      * Name of the product, optional and must be at most 100 characters.
      */
@@ -70,27 +73,25 @@ become applicable.
     public ?string $name;
 
     #[SerializedName('price')]
-    public ?Price $price;
+    public ?PatchProductRequestPrice $price;
 
-    /**
-     * Represents the different categories of taxation applicable to various products and services.
-     */
     #[SerializedName('tax_category')]
-    public ?TaxCategory $taxCategory;
+    public ?PatchProductRequestTaxCategory $taxCategory;
 
     public function __construct(
         ?array $addons = [],
         ?string $brandId = null,
         ?string $description = null,
-        ?PatchDigitalProductDeliveryRequest $digitalProductDelivery = null,
+        ?PatchProductRequestDigitalProductDelivery $digitalProductDelivery = null,
         ?string $imageId = null,
         ?string $licenseKeyActivationMessage = null,
         ?int $licenseKeyActivationsLimit = null,
-        ?LicenseKeyDuration $licenseKeyDuration = null,
+        ?PatchProductRequestLicenseKeyDuration $licenseKeyDuration = null,
         ?bool $licenseKeyEnabled = null,
+        ?PatchProductRequestMetadata $metadata = null,
         ?string $name = null,
-        ?Price $price = null,
-        ?TaxCategory $taxCategory = null
+        ?PatchProductRequestPrice $price = null,
+        ?PatchProductRequestTaxCategory $taxCategory = null
     ) {
         $this->addons = $addons;
         $this->brandId = $brandId;
@@ -101,6 +102,7 @@ become applicable.
         $this->licenseKeyActivationsLimit = $licenseKeyActivationsLimit;
         $this->licenseKeyDuration = $licenseKeyDuration;
         $this->licenseKeyEnabled = $licenseKeyEnabled;
+        $this->metadata = $metadata;
         $this->name = $name;
         $this->price = $price;
         $this->taxCategory = $taxCategory;

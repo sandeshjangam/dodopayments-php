@@ -2,10 +2,10 @@
 <?php
 
 use Dodopayments\Client;
-use Dodopayments\Models\CreateDigitalProductDeliveryRequest;
-use Dodopayments\Models\LicenseKeyDuration;
 use Dodopayments\Models\Price;
 use Dodopayments\Models\TaxCategory;
+use Dodopayments\Models\CreateDigitalProductDeliveryRequest;
+use Dodopayments\Models\LicenseKeyDuration;
 use Dodopayments\Models\CreateProductRequest;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
@@ -18,11 +18,12 @@ $input = new Models\CreateProductRequest(
   addons: [],
   brandId: "brand_id",
   description: "description",
-  digitalProductDelivery: $createDigitalProductDeliveryRequest,
+  digitalProductDelivery: $createProductRequestDigitalProductDelivery,
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 9,
-  licenseKeyDuration: $licenseKeyDuration,
+  licenseKeyActivationsLimit: 5,
+  licenseKeyDuration: $createProductRequestLicenseKeyDuration,
   licenseKeyEnabled: true,
+  metadata: [],
   name: "name",
   price: $price,
   taxCategory: $taxCategory

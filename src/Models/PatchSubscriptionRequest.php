@@ -9,29 +9,29 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 class PatchSubscriptionRequest
 {
     #[SerializedName('billing')]
-    public ?BillingAddress $billing;
+    public ?Billing $billing;
 
     #[SerializedName('cancel_at_next_billing_date')]
     public ?bool $cancelAtNextBillingDate;
 
     #[SerializedName('disable_on_demand')]
-    public ?DisableOnDemandReq $disableOnDemand;
+    public ?DisableOnDemand $disableOnDemand;
 
     #[SerializedName('metadata')]
-    public ?array $metadata;
+    public ?PatchSubscriptionRequestMetadata $metadata;
 
     #[SerializedName('status')]
-    public ?SubscriptionStatus $status;
+    public ?PatchSubscriptionRequestStatus $status;
 
     #[SerializedName('tax_id')]
     public ?string $taxId;
 
     public function __construct(
-        ?BillingAddress $billing = null,
+        ?Billing $billing = null,
         ?bool $cancelAtNextBillingDate = null,
-        ?DisableOnDemandReq $disableOnDemand = null,
-        ?array $metadata = [],
-        ?SubscriptionStatus $status = null,
+        ?DisableOnDemand $disableOnDemand = null,
+        ?PatchSubscriptionRequestMetadata $metadata = null,
+        ?PatchSubscriptionRequestStatus $status = null,
         ?string $taxId = null
     ) {
         $this->billing = $billing;

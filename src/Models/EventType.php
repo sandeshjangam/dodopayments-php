@@ -27,7 +27,6 @@ enum EventType: string
     case SubscriptionActive = 'subscription.active';
     case SubscriptionRenewed = 'subscription.renewed';
     case SubscriptionOnHold = 'subscription.on_hold';
-    case SubscriptionPaused = 'subscription.paused';
     case SubscriptionCancelled = 'subscription.cancelled';
     case SubscriptionFailed = 'subscription.failed';
     case SubscriptionExpired = 'subscription.expired';

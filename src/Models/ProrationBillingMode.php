@@ -10,4 +10,5 @@ enum ProrationBillingMode: string
 {
     case ProratedImmediately = 'prorated_immediately';
     case FullImmediately = 'full_immediately';
+    case DifferenceImmediately = 'difference_immediately';
 }

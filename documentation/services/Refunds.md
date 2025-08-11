@@ -22,7 +22,7 @@ A list of all methods in the `Refunds` service. Click on the method name to view
 | $createdAtLte | string | ❌ | Get events created before this time |
 | $pageSize | int | ❌ | Page size default is 10 max is 100 |
 | $pageNumber | int | ❌ | Page number default is 0 |
-| $status | Models\RefundStatus | ❌ | Filter by status |
+| $status | Models\ListRefundsStatus | ❌ | Filter by status |
 | $customerId | string | ❌ | Filter by customer_id |
 
 **Return Type**
@@ -37,13 +37,13 @@ use Dodopayments\Client;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
-$status = Models\RefundStatus::Succeeded;
+$status = Models\ListRefundsStatus::Succeeded;
 
 $response = $sdk->refunds->listRefunds(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 8,
-  pageNumber: 9,
+  pageSize: 2,
+  pageNumber: 2,
   status: $status,
   customerId: "customer_id"
 );

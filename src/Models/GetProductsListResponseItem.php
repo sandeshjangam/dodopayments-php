@@ -21,7 +21,7 @@ class GetProductsListResponseItem
     public string $createdAt;
 
     #[SerializedName('currency')]
-    public ?Currency $currency;
+    public ?GetProductsListResponseItemCurrency $currency;
 
     /**
      * Description of the product, optional.
@@ -40,6 +40,9 @@ class GetProductsListResponseItem
      */
     #[SerializedName('is_recurring')]
     public bool $isRecurring;
+
+    #[SerializedName('metadata')]
+    public array $metadata;
 
     /**
      * Name of the product, optional.
@@ -62,7 +65,7 @@ This ensures precision and avoids floating-point rounding errors.
     public ?int $price;
 
     #[SerializedName('price_detail')]
-    public ?Price $priceDetail;
+    public ?PriceDetail $priceDetail;
 
     /**
      * Unique identifier for the product.
@@ -91,13 +94,14 @@ This ensures precision and avoids floating-point rounding errors.
     public function __construct(
         string $businessId,
         string $createdAt,
-        ?Currency $currency = null,
+        ?GetProductsListResponseItemCurrency $currency = null,
         ?string $description = null,
         ?string $image = null,
         bool $isRecurring,
+        array $metadata,
         ?string $name = null,
         ?int $price = null,
-        ?Price $priceDetail = null,
+        ?PriceDetail $priceDetail = null,
         string $productId,
         TaxCategory $taxCategory,
         ?bool $taxInclusive = null,
@@ -109,6 +113,7 @@ This ensures precision and avoids floating-point rounding errors.
         $this->description = $description;
         $this->image = $image;
         $this->isRecurring = $isRecurring;
+        $this->metadata = $metadata;
         $this->name = $name;
         $this->price = $price;
         $this->priceDetail = $priceDetail;

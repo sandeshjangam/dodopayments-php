@@ -17,7 +17,7 @@ class CreateDiscountRequest
 	 * The discount amount.
 
 - If `discount_type` is ``not`` `percentage`, `amount` is in ``USD cents``. For example, `100` means `$1.00`.
-Only USD is allowed.
+  Only USD is allowed.
 - If `discount_type` ``is`` `percentage`, `amount` is in ``basis points``. For example, `540` means `5.4%`.
 
 Must be at least 1.
@@ -49,6 +49,14 @@ Must be at least 1.
     #[SerializedName('restricted_to')]
     public ?array $restrictedTo;
 
+    /**
+	 * Number of subscription billing cycles this discount is valid for.
+If not provided, the discount will be applied indefinitely to
+all recurring payments related to the subscription.
+	 */
+    #[SerializedName('subscription_cycles')]
+    public ?int $subscriptionCycles;
+
     #[SerializedName('type')]
     public DiscountType $type;
 
@@ -65,6 +73,7 @@ Must be >= 1 if provided.
         ?string $expiresAt = null,
         ?string $name = null,
         ?array $restrictedTo = [],
+        ?int $subscriptionCycles = null,
         DiscountType $type,
         ?int $usageLimit = null
     ) {
@@ -73,6 +82,7 @@ Must be >= 1 if provided.
         $this->expiresAt = $expiresAt;
         $this->name = $name;
         $this->restrictedTo = $restrictedTo;
+        $this->subscriptionCycles = $subscriptionCycles;
         $this->type = $type;
         $this->usageLimit = $usageLimit;
     }

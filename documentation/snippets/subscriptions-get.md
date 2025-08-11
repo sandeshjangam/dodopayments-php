@@ -5,13 +5,13 @@ use Dodopayments\Client;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
-$status = Models\SubscriptionStatus::Pending;
+$status = Models\ListSubscriptionsHandlerStatus::Pending;
 
 $response = $sdk->subscriptions->listSubscriptionsHandler(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 1,
-  pageNumber: 8,
+  pageSize: 3,
+  pageNumber: 6,
   customerId: "customer_id",
   status: $status,
   brandId: "brand_id"

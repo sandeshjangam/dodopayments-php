@@ -16,6 +16,12 @@
     | currency | model | ❌ |  |
     | reason | string | ❌ | The reason provided for the refund, if any. Optional. |
 
+# RefundResponseCurrency
+
+
+
+
+
 
 
 

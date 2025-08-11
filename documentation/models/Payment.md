@@ -21,7 +21,7 @@
     | settlementCurrency | model | ✅ |  |
     | totalAmount | integer | ✅ | Total amount charged to the customer including tax, in smallest currency unit (e.g. cents) |
     | payloadType | model | ✅ |  |
-    | cardIssuingCountry | model | ❌ | ISO country code alpha2 variant |
+    | cardIssuingCountry | model | ❌ |  |
     | cardLastFour | string | ❌ | The last four digits of the card |
     | cardNetwork | string | ❌ | Card network like VISA, MASTERCARD etc. |
     | cardType | string | ❌ | The type of card DEBIT or CREDIT |
@@ -47,6 +47,18 @@
 | Name | Type | Required | Description |
 | :-------- | :----------| :----------| :----------|
     | Payment | string |  | Payment |
+
+
+# PaymentCardIssuingCountry
+
+
+
+
+
+# PaymentStatus
+
+
+
 
 
 

@@ -15,15 +15,16 @@ $input = new Models\PatchProductRequest(
   addons: [],
   brandId: "brand_id",
   description: "description",
-  digitalProductDelivery: $patchDigitalProductDeliveryRequest,
+  digitalProductDelivery: $patchProductRequestDigitalProductDelivery,
   imageId: "image_id",
   licenseKeyActivationMessage: "license_key_activation_message",
-  licenseKeyActivationsLimit: 9,
-  licenseKeyDuration: $licenseKeyDuration,
+  licenseKeyActivationsLimit: 4,
+  licenseKeyDuration: $patchProductRequestLicenseKeyDuration,
   licenseKeyEnabled: true,
+  metadata: $patchProductRequestMetadata,
   name: "name",
-  price: $price,
-  taxCategory: $taxCategory
+  price: $patchProductRequestPrice,
+  taxCategory: $patchProductRequestTaxCategory
 );
 
 $response = $sdk->products->patchProduct(

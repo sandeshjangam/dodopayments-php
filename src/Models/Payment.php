@@ -23,11 +23,8 @@ class Payment
     #[SerializedName('business_id')]
     public string $businessId;
 
-    /**
-     * ISO country code alpha2 variant
-     */
     #[SerializedName('card_issuing_country')]
-    public ?CountryCodeAlpha2 $cardIssuingCountry;
+    public ?PaymentCardIssuingCountry $cardIssuingCountry;
 
     /**
      * The last four digits of the card
@@ -150,7 +147,7 @@ in your Dodo balance.
     public ?int $settlementTax;
 
     #[SerializedName('status')]
-    public ?IntentStatus $status;
+    public ?PaymentStatus $status;
 
     /**
      * Identifier of the subscription if payment is part of a subscription
@@ -183,7 +180,7 @@ in your Dodo balance.
         BillingAddress $billing,
         string $brandId,
         string $businessId,
-        ?CountryCodeAlpha2 $cardIssuingCountry = null,
+        ?PaymentCardIssuingCountry $cardIssuingCountry = null,
         ?string $cardLastFour = null,
         ?string $cardNetwork = null,
         ?string $cardType = null,
@@ -205,7 +202,7 @@ in your Dodo balance.
         int $settlementAmount,
         Currency $settlementCurrency,
         ?int $settlementTax = null,
-        ?IntentStatus $status = null,
+        ?PaymentStatus $status = null,
         ?string $subscriptionId = null,
         ?int $tax = null,
         int $totalAmount,

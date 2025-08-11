@@ -21,9 +21,6 @@ class Discounts extends BaseService
         return Serializer::deserialize($data, Models\GetDiscountsListResponse::class);
     }
 
-    /**
-     * If `code` is omitted or empty, a random 16-char uppercase code is generated.
-     */
     public function createDiscountHandler(Models\CreateDiscountRequest $input): Models\DiscountResponse
     {
         $data = $this->sendRequest('post', '/discounts', ['json' => Serializer::serialize($input)]);

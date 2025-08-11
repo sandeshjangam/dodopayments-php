@@ -9,7 +9,7 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 class PatchAddonRequest
 {
     #[SerializedName('currency')]
-    public ?Currency $currency;
+    public ?PatchAddonRequestCurrency $currency;
 
     /**
      * Description of the Addon, optional and must be at most 1000 characters.
@@ -35,19 +35,16 @@ class PatchAddonRequest
     #[SerializedName('price')]
     public ?int $price;
 
-    /**
-     * Represents the different categories of taxation applicable to various products and services.
-     */
     #[SerializedName('tax_category')]
-    public ?TaxCategory $taxCategory;
+    public ?PatchAddonRequestTaxCategory $taxCategory;
 
     public function __construct(
-        ?Currency $currency = null,
+        ?PatchAddonRequestCurrency $currency = null,
         ?string $description = null,
         ?string $imageId = null,
         ?string $name = null,
         ?int $price = null,
-        ?TaxCategory $taxCategory = null
+        ?PatchAddonRequestTaxCategory $taxCategory = null
     ) {
         $this->currency = $currency;
         $this->description = $description;

@@ -27,7 +27,7 @@ A list of all methods in the `LicenseKeys` service. Click on the method name to 
 
 **Return Type**
 
-`Models\ListLicenseKeyInstancesResponse`
+`array`
 
 **Example Usage Code Snippet**
 ```php
@@ -38,7 +38,7 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->licenseKeys->listLicenseKeyInstances(
-  pageSize: 9,
+  pageSize: 123,
   pageNumber: 9,
   licenseKeyId: "license_key_id"
 );
@@ -129,12 +129,12 @@ print_r($response);
 | $pageSize | int | ❌ | Page size default is 10 max is 100 |
 | $pageNumber | int | ❌ | Page number default is 0 |
 | $customerId | string | ❌ | Filter by customer ID |
-| $status | Models\LicenseKeyStatus | ❌ | Filter by license key status |
+| $status | Models\ListLicenseKeysHandlerStatus | ❌ | Filter by license key status |
 | $productId | string | ❌ | Filter by product ID |
 
 **Return Type**
 
-`Models\ListLicenseKeysResponse`
+`array`
 
 **Example Usage Code Snippet**
 ```php
@@ -144,11 +144,11 @@ use Dodopayments\Client;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
-$status = Models\LicenseKeyStatus::Active;
+$status = Models\ListLicenseKeysHandlerStatus::Active;
 
 $response = $sdk->licenseKeys->listLicenseKeysHandler(
-  pageSize: 10,
-  pageNumber: 123,
+  pageSize: 7,
+  pageNumber: 1,
   customerId: "customer_id",
   status: $status,
   productId: "product_id"
@@ -216,7 +216,7 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\PatchLicenseKeyRequest(
-  activationsLimit: 10,
+  activationsLimit: 1,
   disabled: true,
   expiresAt: "expires_at"
 );

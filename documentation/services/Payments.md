@@ -25,7 +25,7 @@ A list of all methods in the `Payments` service. Click on the method name to vie
 | $pageNumber | int | ❌ | Page number default is 0 |
 | $customerId | string | ❌ | Filter by customer id |
 | $subscriptionId | string | ❌ | Filter by subscription id |
-| $status | Models\IntentStatus | ❌ | Filter by status |
+| $status | Models\ListPaymentsHandlerStatus | ❌ | Filter by status |
 | $brandId | string | ❌ | filter by Brand id |
 
 **Return Type**
@@ -40,13 +40,13 @@ use Dodopayments\Client;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
-$status = Models\IntentStatus::Succeeded;
+$status = Models\ListPaymentsHandlerStatus::Succeeded;
 
 $response = $sdk->payments->listPaymentsHandler(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 5,
-  pageNumber: 4,
+  pageSize: 123,
+  pageNumber: 7,
   customerId: "customer_id",
   subscriptionId: "subscription_id",
   status: $status,
@@ -79,9 +79,9 @@ print_r($response);
 use Dodopayments\Client;
 use Dodopayments\Models\PaymentMethodTypes;
 use Dodopayments\Models\BillingAddress;
-use Dodopayments\Models\Currency;
 use Dodopayments\Models\CustomerRequest;
 use Dodopayments\Models\OneTimeProductCartItemReq;
+use Dodopayments\Models\Currency;
 use Dodopayments\Models\CreateOneTimePaymentRequest;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
@@ -100,15 +100,15 @@ COMPLEX_MODEL_NOT_IMPLEMENTED
 
 
 $oneTimeProductCartItemReq = new Models\OneTimeProductCartItemReq(
-  amount: 10,
+  amount: 6,
   productId: "product_id",
-  quantity: 1
+  quantity: 4
 );
 
 $input = new Models\CreateOneTimePaymentRequest(
   allowedPaymentMethodTypes: [],
   billing: $billingAddress,
-  billingCurrency: $currency,
+  billingCurrency: $createOneTimePaymentRequestBillingCurrency,
   customer: $customerRequest,
   discountCode: "discount_code",
   metadata: [],

@@ -9,7 +9,7 @@ use Dodopayments\Models;
 
 class Invoices extends BaseService
 {
-    public function getPaymentInvoiceNoAuth(string $paymentId): mixed
+    public function getPaymentInvoiceNoAuth(string $paymentId): array
     {
         $data = $this->sendRequest('get', "/invoices/payments/{$paymentId}", []);
 

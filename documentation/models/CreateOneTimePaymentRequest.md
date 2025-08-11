@@ -18,6 +18,12 @@
     | showSavedPaymentMethods | boolean | ❌ | Display saved payment methods of a returning customer False by default |
     | taxId | string | ❌ | Tax ID in case the payment is B2B. If tax id validation fails the payment creation will fail |
 
+# CreateOneTimePaymentRequestBillingCurrency
+
+
+
+
+
 
 
 

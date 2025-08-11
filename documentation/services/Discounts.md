@@ -5,7 +5,7 @@ A list of all methods in the `Discounts` service. Click on the method name to vi
 | Methods | Description |
 | :------ | :---------- |
 |[list_discounts_handler](#list_discounts_handler)|  |
-|[create_discount_handler](#create_discount_handler)| If `code` is omitted or empty, a random 16-char uppercase code is generated. |
+|[create_discount_handler](#create_discount_handler)|  |
 |[get_discount_handler](#get_discount_handler)|  |
 |[patch_discount_handler](#patch_discount_handler)|  |
 |[delete_discount_handler](#delete_discount_handler)|  |
@@ -36,16 +36,14 @@ use Dodopayments\Client;
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 $response = $sdk->discounts->listDiscountsHandler(
-  pageSize: 8,
-  pageNumber: 1
+  pageSize: 10,
+  pageNumber: 10
 );
 
 print_r($response);
 ```
 
 ## create_discount_handler
-
-If `code` is omitted or empty, a random 16-char uppercase code is generated.
 
 
 - HTTP Method: `POST`
@@ -55,7 +53,7 @@ If `code` is omitted or empty, a random 16-char uppercase code is generated.
 
 | Name    | Type| Required | Description |
 | :-------- | :----------| :----------| :----------|
-| input | Models\CreateDiscountRequest | ✅ | If `code` is omitted or empty, a random 16-char uppercase code is generated. |
+| input | Models\CreateDiscountRequest | ✅ |  |
 
 **Return Type**
 
@@ -74,13 +72,14 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 $discountType = Models\DiscountType::Percentage;
 
 $input = new Models\CreateDiscountRequest(
-  amount: 7,
+  amount: 123,
   code: "code",
   expiresAt: "expires_at",
   name: "name",
   restrictedTo: [],
+  subscriptionCycles: 1,
   type: $discountType,
-  usageLimit: 8
+  usageLimit: 2
 );
 
 $response = $sdk->discounts->createDiscountHandler(
@@ -150,13 +149,14 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\PatchDiscountRequest(
-  amount: 9,
+  amount: 5,
   code: "code",
   expiresAt: "expires_at",
   name: "name",
   restrictedTo: [],
-  type: $discountType,
-  usageLimit: 5
+  subscriptionCycles: 2,
+  type: $patchDiscountRequestType,
+  usageLimit: 10
 );
 
 $response = $sdk->discounts->patchDiscountHandler(

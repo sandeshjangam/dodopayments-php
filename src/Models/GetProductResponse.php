@@ -37,7 +37,7 @@ class GetProductResponse
     public ?string $description;
 
     #[SerializedName('digital_product_delivery')]
-    public ?DigitalProductDelivery $digitalProductDelivery;
+    public ?GetProductResponseDigitalProductDelivery $digitalProductDelivery;
 
     /**
      * URL of the product image, optional.
@@ -64,13 +64,16 @@ class GetProductResponse
     public ?int $licenseKeyActivationsLimit;
 
     #[SerializedName('license_key_duration')]
-    public ?LicenseKeyDuration $licenseKeyDuration;
+    public ?GetProductResponseLicenseKeyDuration $licenseKeyDuration;
 
     /**
      * Indicates whether the product requires a license key.
      */
     #[SerializedName('license_key_enabled')]
     public bool $licenseKeyEnabled;
+
+    #[SerializedName('metadata')]
+    public array $metadata;
 
     /**
      * Name of the product, optional.
@@ -105,13 +108,14 @@ class GetProductResponse
         string $businessId,
         string $createdAt,
         ?string $description = null,
-        ?DigitalProductDelivery $digitalProductDelivery = null,
+        ?GetProductResponseDigitalProductDelivery $digitalProductDelivery = null,
         ?string $image = null,
         bool $isRecurring,
         ?string $licenseKeyActivationMessage = null,
         ?int $licenseKeyActivationsLimit = null,
-        ?LicenseKeyDuration $licenseKeyDuration = null,
+        ?GetProductResponseLicenseKeyDuration $licenseKeyDuration = null,
         bool $licenseKeyEnabled,
+        array $metadata,
         ?string $name = null,
         Price $price,
         string $productId,
@@ -130,6 +134,7 @@ class GetProductResponse
         $this->licenseKeyActivationsLimit = $licenseKeyActivationsLimit;
         $this->licenseKeyDuration = $licenseKeyDuration;
         $this->licenseKeyEnabled = $licenseKeyEnabled;
+        $this->metadata = $metadata;
         $this->name = $name;
         $this->price = $price;
         $this->productId = $productId;

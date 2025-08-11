@@ -22,6 +22,18 @@ Request payload for creating a new subscription This struct represents the data 
     | taxId | string | ❌ | Tax ID in case the payment is B2B. If tax id validation fails the payment creation will fail |
     | trialPeriodDays | integer | ❌ | Optional trial period in days If specified, this value overrides the trial period set in the product's price Must be between 0 and 10000 days |
 
+# CreateSubscriptionRequestBillingCurrency
+
+
+
+
+
+# CreateSubscriptionRequestOnDemand
+
+
+
+
+
 
 
 

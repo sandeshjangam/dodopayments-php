@@ -16,7 +16,20 @@
     | licenseKeyActivationsLimit | integer | ❌ | The number of times the license key can be activated. Must be 0 or greater |
     | licenseKeyDuration | model | ❌ |  |
     | licenseKeyEnabled | boolean | ❌ | When true, generates and sends a license key to your customer. Defaults to false |
+    | metadata | dictionary | ❌ |  |
     | name | string | ❌ | Optional name of the product |
+
+# CreateProductRequestDigitalProductDelivery
+
+
+
+
+
+# CreateProductRequestLicenseKeyDuration
+
+
+
+
 
 
 

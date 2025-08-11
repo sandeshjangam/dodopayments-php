@@ -20,7 +20,7 @@
     | settlementAmount | integer | ✅ | The amount that will be credited to your Dodo balance after currency conversion and processing. Especially relevant for adaptive pricing where the customer's payment currency differs from your settlement currency. |
     | settlementCurrency | model | ✅ |  |
     | totalAmount | integer | ✅ | Total amount charged to the customer including tax, in smallest currency unit (e.g. cents) |
-    | cardIssuingCountry | model | ❌ | ISO country code alpha2 variant |
+    | cardIssuingCountry | model | ❌ |  |
     | cardLastFour | string | ❌ | The last four digits of the card |
     | cardNetwork | string | ❌ | Card network like VISA, MASTERCARD etc. |
     | cardType | string | ❌ | The type of card DEBIT or CREDIT |
@@ -36,6 +36,18 @@
     | subscriptionId | string | ❌ | Identifier of the subscription if payment is part of a subscription |
     | tax | integer | ❌ | Amount of tax collected in smallest currency unit (e.g. cents) |
     | updatedAt | string | ❌ | Timestamp when the payment was last updated |
+
+# PaymentResponseCardIssuingCountry
+
+
+
+
+
+# PaymentResponseStatus
+
+
+
+
 
 
 

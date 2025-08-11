@@ -20,6 +20,9 @@ class PaymentLineItem
     #[SerializedName('name')]
     public ?string $name;
 
+    #[SerializedName('refundable_amount')]
+    public int $refundableAmount;
+
     #[SerializedName('tax')]
     public int $tax;
 
@@ -28,12 +31,14 @@ class PaymentLineItem
         ?string $description = null,
         string $itemsId,
         ?string $name = null,
+        int $refundableAmount,
         int $tax
     ) {
         $this->amount = $amount;
         $this->description = $description;
         $this->itemsId = $itemsId;
         $this->name = $name;
+        $this->refundableAmount = $refundableAmount;
         $this->tax = $tax;
     }
 }

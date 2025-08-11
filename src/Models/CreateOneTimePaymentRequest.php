@@ -23,7 +23,7 @@ Availability still depends on other factors (e.g., customer location, merchant s
     public BillingAddress $billing;
 
     #[SerializedName('billing_currency')]
-    public ?Currency $billingCurrency;
+    public ?CreateOneTimePaymentRequestBillingCurrency $billingCurrency;
 
     #[SerializedName('customer')]
     public CustomerRequest $customer;
@@ -73,7 +73,7 @@ False by default
     public function __construct(
         ?array $allowedPaymentMethodTypes = [],
         BillingAddress $billing,
-        ?Currency $billingCurrency = null,
+        ?CreateOneTimePaymentRequestBillingCurrency $billingCurrency = null,
         CustomerRequest $customer,
         ?string $discountCode = null,
         ?array $metadata = [],

@@ -11,7 +11,19 @@
     | imageId | string | ❌ | Addon image id after its uploaded to S3 |
     | name | string | ❌ | Name of the Addon, optional and must be at most 100 characters. |
     | price | integer | ❌ | Amount of the addon |
-    | taxCategory | model | ❌ | Represents the different categories of taxation applicable to various products and services. |
+    | taxCategory | model | ❌ |  |
+
+# PatchAddonRequestCurrency
+
+
+
+
+
+# PatchAddonRequestTaxCategory
+
+
+
+
 
 
 

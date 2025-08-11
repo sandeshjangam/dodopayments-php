@@ -19,6 +19,12 @@
     | status | model | ❌ |  |
     | subscriptionId | string | ❌ |  |
 
+# GetPaymentsListResponseItemStatus
+
+
+
+
+
 
 
 

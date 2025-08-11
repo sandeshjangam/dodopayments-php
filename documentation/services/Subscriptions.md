@@ -26,7 +26,7 @@ A list of all methods in the `Subscriptions` service. Click on the method name t
 | $pageSize | int | ❌ | Page size default is 10 max is 100 |
 | $pageNumber | int | ❌ | Page number default is 0 |
 | $customerId | string | ❌ | Filter by customer id |
-| $status | Models\SubscriptionStatus | ❌ | Filter by status |
+| $status | Models\ListSubscriptionsHandlerStatus | ❌ | Filter by status |
 | $brandId | string | ❌ | filter by Brand id |
 
 **Return Type**
@@ -41,13 +41,13 @@ use Dodopayments\Client;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
-$status = Models\SubscriptionStatus::Pending;
+$status = Models\ListSubscriptionsHandlerStatus::Pending;
 
 $response = $sdk->subscriptions->listSubscriptionsHandler(
   createdAtGte: "created_at_gte",
   createdAtLte: "created_at_lte",
-  pageSize: 1,
-  pageNumber: 8,
+  pageSize: 3,
+  pageNumber: 6,
   customerId: "customer_id",
   status: $status,
   brandId: "brand_id"
@@ -80,8 +80,8 @@ use Dodopayments\Client;
 use Dodopayments\Models\AttachAddonReq;
 use Dodopayments\Models\PaymentMethodTypes;
 use Dodopayments\Models\BillingAddress;
-use Dodopayments\Models\Currency;
 use Dodopayments\Models\CustomerRequest;
+use Dodopayments\Models\Currency;
 use Dodopayments\Models\OnDemandSubscriptionReq;
 use Dodopayments\Models\CreateSubscriptionRequest;
 
@@ -103,14 +103,14 @@ $input = new Models\CreateSubscriptionRequest(
   addons: [],
   allowedPaymentMethodTypes: [],
   billing: $billingAddress,
-  billingCurrency: $currency,
+  billingCurrency: $createSubscriptionRequestBillingCurrency,
   customer: $customerRequest,
   discountCode: "discount_code",
   metadata: [],
-  onDemand: $onDemandSubscriptionReq,
+  onDemand: $createSubscriptionRequestOnDemand,
   paymentLink: true,
   productId: "product_id",
-  quantity: 4,
+  quantity: 5,
   returnUrl: "return_url",
   showSavedPaymentMethods: true,
   taxId: "tax_id",
@@ -186,11 +186,11 @@ $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\PatchSubscriptionRequest(
-  billing: $billingAddress,
+  billing: $billing,
   cancelAtNextBillingDate: true,
-  disableOnDemand: $disableOnDemandReq,
-  metadata: [],
-  status: $subscriptionStatus,
+  disableOnDemand: $disableOnDemand,
+  metadata: $patchSubscriptionRequestMetadata,
+  status: $patchSubscriptionRequestStatus,
   taxId: "tax_id"
 );
 
@@ -236,7 +236,7 @@ $input = new Models\UpdateSubscriptionPlanReq(
   addons: [],
   productId: "product_id",
   prorationBillingMode: $prorationBillingMode,
-  quantity: 6
+  quantity: 3
 );
 
 $response = $sdk->subscriptions->updateSubscriptionPlanHandler(
@@ -269,14 +269,18 @@ print_r($response);
 <?php
 
 use Dodopayments\Client;
+use Dodopayments\Models\Currency;
 use Dodopayments\Models\CreateSubscriptionChargeRequest;
 
 $sdk = new Client(accessToken: 'YOUR_TOKEN');
 
 
 $input = new Models\CreateSubscriptionChargeRequest(
-  metadata: [],
-  productPrice: 6
+  adaptiveCurrencyFeesInclusive: true,
+  metadata: $createSubscriptionChargeRequestMetadata,
+  productCurrency: $createSubscriptionChargeRequestProductCurrency,
+  productDescription: "product_description",
+  productPrice: 3
 );
 
 $response = $sdk->subscriptions->createSubscriptionCharge(

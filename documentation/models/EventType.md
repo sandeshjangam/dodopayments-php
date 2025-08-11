@@ -22,7 +22,6 @@ Event types for Dodo events
     | SubscriptionActive | string |  | subscription.active |
     | SubscriptionRenewed | string |  | subscription.renewed |
     | SubscriptionOnHold | string |  | subscription.on_hold |
-    | SubscriptionPaused | string |  | subscription.paused |
     | SubscriptionCancelled | string |  | subscription.cancelled |
     | SubscriptionFailed | string |  | subscription.failed |
     | SubscriptionExpired | string |  | subscription.expired |

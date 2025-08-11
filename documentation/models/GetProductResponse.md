@@ -11,6 +11,7 @@
     | createdAt | string | ✅ | Timestamp when the product was created. |
     | isRecurring | boolean | ✅ | Indicates if the product is recurring (e.g., subscriptions). |
     | licenseKeyEnabled | boolean | ✅ | Indicates whether the product requires a license key. |
+    | metadata | dictionary | ✅ |  |
     | price | model | ✅ |  |
     | productId | string | ✅ | Unique identifier for the product. |
     | taxCategory | model | ✅ | Represents the different categories of taxation applicable to various products and services. |
@@ -23,6 +24,18 @@
     | licenseKeyActivationsLimit | integer | ❌ | Limit on the number of activations for the license key, if enabled. |
     | licenseKeyDuration | model | ❌ |  |
     | name | string | ❌ | Name of the product, optional. |
+
+# GetProductResponseDigitalProductDelivery
+
+
+
+
+
+# GetProductResponseLicenseKeyDuration
+
+
+
+
 
 
 

@@ -36,7 +36,7 @@ Availability still depends on other factors (e.g., customer location, merchant s
     public BillingAddress $billing;
 
     #[SerializedName('billing_currency')]
-    public ?Currency $billingCurrency;
+    public ?CreateSubscriptionRequestBillingCurrency $billingCurrency;
 
     #[SerializedName('customer')]
     public CustomerRequest $customer;
@@ -51,7 +51,7 @@ Availability still depends on other factors (e.g., customer location, merchant s
     public ?array $metadata;
 
     #[SerializedName('on_demand')]
-    public ?OnDemandSubscriptionReq $onDemand;
+    public ?CreateSubscriptionRequestOnDemand $onDemand;
 
     /**
 	 * If true, generates a payment link.
@@ -103,11 +103,11 @@ Must be between 0 and 10000 days
         ?array $addons = [],
         ?array $allowedPaymentMethodTypes = [],
         BillingAddress $billing,
-        ?Currency $billingCurrency = null,
+        ?CreateSubscriptionRequestBillingCurrency $billingCurrency = null,
         CustomerRequest $customer,
         ?string $discountCode = null,
         ?array $metadata = [],
-        ?OnDemandSubscriptionReq $onDemand = null,
+        ?CreateSubscriptionRequestOnDemand $onDemand = null,
         ?bool $paymentLink = null,
         string $productId,
         int $quantity,

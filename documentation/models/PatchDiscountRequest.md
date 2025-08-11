@@ -11,8 +11,15 @@ Request body for patching (updating) a discount. All fields are optional and onl
     | expiresAt | string | ❌ |  |
     | name | string | ❌ |  |
     | restrictedTo | array | ❌ | If present, replaces all restricted product IDs with this new set. To remove all restrictions, send empty array |
+    | subscriptionCycles | integer | ❌ | Number of subscription billing cycles this discount is valid for. If not provided, the discount will be applied indefinitely to all recurring payments related to the subscription. |
     | type | model | ❌ |  |
     | usageLimit | integer | ❌ |  |
+
+# PatchDiscountRequestType
+
+
+
+
 
 
 

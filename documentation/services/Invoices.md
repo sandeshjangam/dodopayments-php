@@ -20,7 +20,7 @@ A list of all methods in the `Invoices` service. Click on the method name to vie
 
 **Return Type**
 
-`mixed`
+`array`
 
 **Example Usage Code Snippet**
 ```php

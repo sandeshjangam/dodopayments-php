@@ -9,12 +9,16 @@ use Dodopayments\Models;
 
 class Customers extends BaseService
 {
-    public function listCustomers(int $pageSize = null, int $pageNumber = null): Models\GetCustomersListResponse
-    {
+    public function listCustomers(
+        int $pageSize = null,
+        int $pageNumber = null,
+        string $email = null
+    ): Models\GetCustomersListResponse {
         $data = $this->sendRequest('get', '/customers', [
             'query' => [
                 'page_size' => $pageSize,
                 'page_number' => $pageNumber,
+                'email' => $email,
             ],
         ]);
 

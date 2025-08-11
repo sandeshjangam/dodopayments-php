@@ -27,6 +27,7 @@ Response struct representing subscription details
     | taxInclusive | boolean | ✅ | Indicates if the recurring_pre_tax_amount is tax inclusive |
     | trialPeriodDays | integer | ✅ | Number of days in the trial period (0 if no trial) |
     | cancelledAt | string | ❌ | Cancelled timestamp if the subscription is cancelled |
+    | discountCyclesRemaining | integer | ❌ | Number of remaining discount cycles if discount is applied |
     | discountId | string | ❌ | The discount id if discount is applied |
 
 

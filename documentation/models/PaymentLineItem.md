@@ -8,6 +8,7 @@
 | :-------- | :----------| :----------| :----------|
     | amount | integer | ✅ |  |
     | itemsId | string | ✅ |  |
+    | refundableAmount | integer | ✅ |  |
     | tax | integer | ✅ |  |
     | description | string | ❌ |  |
     | name | string | ❌ |  |

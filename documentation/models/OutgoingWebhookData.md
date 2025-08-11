@@ -26,7 +26,7 @@
     | settlementCurrency | model | ✅ |  |
     | totalAmount | integer | ✅ | Total amount charged to the customer including tax, in smallest currency unit (e.g. cents) |
     | payloadType | model | ✅ |  |
-    | cardIssuingCountry | model | ❌ | ISO country code alpha2 variant |
+    | cardIssuingCountry | model | ❌ |  |
     | cardLastFour | string | ❌ | The last four digits of the card |
     | cardNetwork | string | ❌ | Card network like VISA, MASTERCARD etc. |
     | cardType | string | ❌ | The type of card DEBIT or CREDIT |
@@ -42,6 +42,18 @@
     | subscriptionId | string | ❌ | Identifier of the subscription if payment is part of a subscription |
     | tax | integer | ❌ | Amount of tax collected in smallest currency unit (e.g. cents) |
     | updatedAt | string | ❌ | Timestamp when the payment was last updated |
+
+# PaymentCardIssuingCountry
+
+
+
+
+
+# PaymentStatus
+
+
+
+
 
 # PaymentPayloadType
 
@@ -86,6 +98,7 @@
     | trialPeriodDays | integer | ✅ | Number of days in the trial period (0 if no trial) |
     | payloadType | model | ✅ |  |
     | cancelledAt | string | ❌ | Cancelled timestamp if the subscription is cancelled |
+    | discountCyclesRemaining | integer | ❌ | Number of remaining discount cycles if discount is applied |
     | discountId | string | ❌ | The discount id if discount is applied |
 
 # SubscriptionPayloadType
@@ -118,6 +131,12 @@
     | amount | integer | ❌ | The refunded amount. |
     | currency | model | ❌ |  |
     | reason | string | ❌ | The reason provided for the refund, if any. Optional. |
+
+# RefundCurrency
+
+
+
+
 
 # RefundPayloadType
 
