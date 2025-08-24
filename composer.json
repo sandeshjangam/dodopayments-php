@@ -27,7 +27,7 @@
   },
   "license": "APACHE-2.0",
   "description": "Dodo Payments PHP SDK",
-  "name": "dodopayments/client",
+  "name": "sandeshjangam/dodopayments-php",
   "require": {
     "php": "^8.1",
     "php-http/discovery": "^1",
